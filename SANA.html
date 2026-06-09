@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SanaConsultIA | Automatización con IA para pymes · Mejores precios de España</title>
+<meta name="description" content="Automatizaciones con IA completamente a medida para tu pyme. Chatbot, agente IA en WhatsApp, automatización de procesos. Desde 350€. Primera empresa de IA del Montseny.">
+<meta name="keywords" content="automatización IA pymes, chatbot empresa, agente IA WhatsApp, automatización procesos, IA Montseny, chatbot inmobiliaria, automatizar citas fisioterapia, chatbot clínica dental">
+<meta property="og:title" content="SanaConsultIA | Automatización con IA para pymes">
+<meta property="og:description" content="Automatizaciones con IA a medida para tu pyme. Desde 350€. Primera empresa de IA del Montseny.">
+<meta property="og:url" content="https://sanaconsultia.es">
+<link rel="canonical" href="https://sanaconsultia.es">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:        #0F1C2E;
+    --navy-mid:    #1A2D45;
+    --green:       #1D9E75;
+    --green-hover: #15865f;
+    --green-light: #9FE1CB;
+    --green-pale:  #E1F5EE;
+    --cream:       #F7F5F0;
+    --sand:        #EDEBE4;
+    --text:        #1A1A18;
+    --text-muted:  #6B6B66;
+    --footer-bg:   #060E18;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    overflow-x: hidden;
+  }
+
+
+  /* ─── SECTOR SELECTOR ─── */
+  .sector-selector {
+    flex: 1 1 40%;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 16px;
+    padding: 1.8rem;
+    width: 100%; max-width: 420px;
+    backdrop-filter: blur(12px);
+  }
+  .sector-selector-label {
+    font-size: .75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .1em; color: var(--green); margin-bottom: 1rem;
+  }
+  .sector-buttons {
+    display: grid; grid-template-columns: 1fr 1fr; gap: .6rem;
+    margin-bottom: 1.4rem;
+  }
+  .sector-btn {
+    background: rgba(255,255,255,.07);
+    border: 1.5px solid rgba(255,255,255,.15);
+    border-radius: 10px;
+    color: rgba(255,255,255,.8);
+    padding: .7rem .8rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: .88rem; font-weight: 500;
+    cursor: pointer;
+    transition: all .2s;
+    text-align: left;
+  }
+  .sector-btn:hover { border-color: var(--green); color: #fff; background: rgba(29,158,117,.15); }
+  .sector-btn.active { border-color: var(--green); background: rgba(29,158,117,.2); color: #fff; font-weight: 700; }
+  .sector-detail { display: none; }
+  .sector-detail.active { display: block; }
+  .sector-problem { color: rgba(255,255,255,.6); font-size: .87rem; line-height: 1.55; margin-bottom: .8rem; }
+  .sector-sol { color: rgba(255,255,255,.88); font-size: .87rem; line-height: 1.55; margin-bottom: 1.2rem; }
+  .btn-sector-demo {
+    display: inline-block;
+    background: var(--green); color: #fff;
+    padding: .65rem 1.4rem; border-radius: 8px;
+    font-weight: 700; font-size: .9rem; text-decoration: none;
+    transition: background .2s;
+  }
+  .btn-sector-demo:hover { background: var(--green-hover); }
+
+
+  .otros-btn {
+    width: 100%; background: rgba(255,255,255,.04);
+    border: 1px dashed rgba(255,255,255,.2); border-radius: 10px;
+    color: rgba(255,255,255,.6); padding: 9px;
+    font-family: "DM Sans", sans-serif; font-size: .85rem; font-weight: 500;
+    cursor: pointer; margin-bottom: 12px; transition: all .2s;
+  }
+  .otros-btn.active,
+  .otros-btn:hover { border-color: var(--green); color: var(--green-light); background: rgba(29,158,117,.08); }
+  .otros-servicios { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+  .otro-item { display: flex; align-items: flex-start; gap: 10px; background: rgba(255,255,255,.05); border: 1px solid rgba(29,158,117,.2); border-radius: 10px; padding: 10px 12px; }
+  .otro-ico { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+  .otro-item strong { color: #fff; font-size: .85rem; display: block; margin-bottom: 2px; }
+  .otro-item p { color: rgba(255,255,255,.5); font-size: .78rem; line-height: 1.4; margin: 0; }
+
+
+  /* ─── LANG SWITCHER ─── */
+  .lang-switcher { display: flex; align-items: center; gap: 4px; margin-right: 1rem; }
+  .lang-btn { background: transparent; border: 1px solid rgba(255,255,255,.25); border-radius: 6px; color: rgba(255,255,255,.6); font-family: "DM Sans", sans-serif; font-size: .8rem; font-weight: 600; padding: 4px 10px; cursor: pointer; transition: all .2s; }
+  .lang-btn.active { background: var(--green); border-color: var(--green); color: #fff; }
+  .lang-btn:hover:not(.active) { border-color: var(--green-light); color: var(--green-light); }
+  [data-lang="ca"] { display: none; }
+
+  /* ─── REVEAL ─── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: flex-start; justify-content: space-between;
+    padding: 0 5%;
+    height: 68px;
+    background: rgba(15,28,46,.82);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(29,158,117,.18);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.25rem; font-weight: 700;
+    color: #fff; text-decoration: none; letter-spacing: -.01em;
+  }
+  .nav-logo span { color: var(--green); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,.78); text-decoration: none; font-size: .92rem; transition: color .2s; }
+  .nav-links a:hover { color: var(--green-light); }
+  .btn-cta {
+    background: var(--green); color: #fff;
+    padding: .55rem 1.3rem; border-radius: 6px;
+    font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 600;
+    text-decoration: none; transition: background .2s, transform .15s;
+    white-space: nowrap;
+  }
+  .btn-cta:hover { background: var(--green-hover); transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh; align-items: flex-start;
+    background: linear-gradient(155deg, var(--navy) 0%, #0d2238 55%, #0e2a1e 100%);
+    display: flex; align-items: flex-start;
+    padding: 80px 5% 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(29,158,117,.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  /* subtle grid texture */
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(29,158,117,.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(29,158,117,.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+
+  .hero-inner { max-width: 1200px; margin: auto; width: 100%; display: flex; gap: 5%; align-items: flex-start; position: relative; z-index: 1; }
+  .hero-text { flex: 1 1 52%; }
+
+  /* Territorio badge */
+  .territory-badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(29,158,117,.15);
+    border: 1px solid rgba(29,158,117,.4);
+    border-radius: 99px;
+    padding: .35rem 1rem;
+    font-size: .8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 1.4rem;
+  }
+  .territory-badge .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 3px rgba(29,158,117,.3);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 3px rgba(29,158,117,.3); }
+    50%      { box-shadow: 0 0 0 6px rgba(29,158,117,.1); }
+  }
+
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-weight: 800; line-height: 1.1;
+    color: #fff; margin-bottom: 1.4rem;
+  }
+  .hero-title .accent { color: var(--green); }
+
+  /* PRECIO BADGE inline en hero */
+  .price-claim {
+    display: inline-flex; align-items: center; gap: .6rem;
+    background: linear-gradient(135deg, rgba(29,158,117,.2), rgba(29,158,117,.08));
+    border: 1.5px solid var(--green);
+    border-radius: 8px;
+    padding: .65rem 1.1rem;
+    margin-bottom: 1.4rem;
+    font-size: .88rem; color: var(--green-light); font-weight: 500;
+  }
+  .price-claim strong { color: #fff; font-weight: 700; }
+  .price-claim .tag-icon { font-size: 1.1rem; }
+
+  .hero-desc {
+    color: rgba(255,255,255,.7);
+    font-size: 1.08rem; line-height: 1.7;
+    max-width: 520px; margin-bottom: 2rem;
+  }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--green); color: #fff;
+    padding: .85rem 2rem; border-radius: 8px;
+    font-weight: 700; font-size: 1rem; text-decoration: none;
+    transition: background .2s, transform .15s, box-shadow .2s;
+    box-shadow: 0 4px 24px rgba(29,158,117,.35);
+  }
+  .btn-primary:hover { background: var(--green-hover); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(29,158,117,.45); }
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,.3); color: rgba(255,255,255,.85);
+    padding: .85rem 1.8rem; border-radius: 8px;
+    font-weight: 500; font-size: 1rem; text-decoration: none;
+    transition: border-color .2s, color .2s;
+  }
+  .btn-outline:hover { border-color: var(--green-light); color: var(--green-light); }
+
+  /* Hero card */
+  .hero-card-wrap { flex: 1 1 40%; display: flex; justify-content: center; align-items: flex-start; padding-top: 0.5rem; }
+  .hero-card {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 16px;
+    padding: 1.8rem;
+    width: 100%; max-width: 380px;
+    backdrop-filter: blur(12px);
+  }
+  .card-label {
+    font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--green); margin-bottom: 1rem;
+  }
+  .chat-bubble {
+    border-radius: 12px 12px 12px 4px;
+    padding: .75rem 1rem; font-size: .88rem; line-height: 1.5;
+    margin-bottom: .65rem;
+  }
+  .chat-bubble.bot  { background: rgba(29,158,117,.18); color: rgba(255,255,255,.9); }
+  .chat-bubble.user { background: rgba(255,255,255,.1); color: rgba(255,255,255,.75); border-radius: 12px 12px 4px 12px; text-align: right; }
+  .card-footer { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; }
+  .card-stat { text-align: center; }
+  .card-stat .val { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--green-light); }
+  .card-stat .lbl { font-size: .72rem; color: rgba(255,255,255,.5); }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    background: var(--navy);
+    padding: 1.8rem 5%;
+    border-top: 1px solid rgba(29,158,117,.15);
+    border-bottom: 1px solid rgba(29,158,117,.15);
+  }
+  .stats-inner { max-width: 1000px; margin: auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem; }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800;
+    color: var(--green-light); display: block; line-height: 1;
+  }
+  .stat-desc { font-size: .82rem; color: rgba(255,255,255,.55); margin-top: .3rem; }
+
+  /* ─── PRECIO DESTACADO BANNER ─── */
+  .price-banner {
+    background: linear-gradient(90deg, var(--navy-mid) 0%, #0e2d1f 100%);
+    border-top: 2px solid var(--green);
+    border-bottom: 2px solid var(--green);
+    padding: 2.2rem 5%;
+  }
+  .price-banner-inner {
+    max-width: 1100px; margin: auto;
+    display: flex; align-items: flex-start; justify-content: space-between;
+    flex-wrap: wrap; gap: 1.5rem;
+  }
+  .price-banner-text h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.4rem, 2.8vw, 2rem);
+    font-weight: 800; color: #fff; line-height: 1.2;
+  }
+  .price-banner-text h2 .green { color: var(--green); }
+  .price-banner-text p { color: rgba(255,255,255,.6); font-size: .92rem; margin-top: .4rem; }
+  .price-pillars { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+  .pillar {
+    display: flex; align-items: flex-start; gap: .6rem;
+    background: rgba(29,158,117,.12);
+    border: 1px solid rgba(29,158,117,.35);
+    border-radius: 8px; padding: .6rem 1rem;
+    font-size: .88rem; color: var(--green-light); font-weight: 500;
+  }
+  .pillar .ico { font-size: 1.1rem; }
+
+  /* ─── SECTIONS GENERIC ─── */
+  section { padding: 90px 5%; }
+  .section-label {
+    display: inline-block;
+    font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--green); margin-bottom: .8rem;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800; line-height: 1.15; color: var(--navy);
+    margin-bottom: 1rem;
+  }
+  .section-title .accent { color: var(--green); }
+  .section-sub { color: var(--text-muted); font-size: 1.05rem; line-height: 1.65; max-width: 600px; }
+  .centered { text-align: center; }
+  .centered .section-sub { margin: 0 auto; }
+
+  /* ─── PROBLEMA / SOLUCIÓN ─── */
+  .problem-section { background: var(--cream); }
+  .ps-grid { max-width: 1100px; margin: 3rem auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .ps-col { background: #fff; border-radius: 14px; padding: 2rem; border: 1px solid var(--sand); }
+  .ps-col.solution { background: var(--navy); border-color: transparent; }
+  .ps-col h3 { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 1.2rem; }
+  .ps-col.problem h3 { color: #c0392b; }
+  .ps-col.solution h3 { color: var(--green-light); }
+  .ps-list { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+  .ps-list li { display: flex; align-items: flex-start; gap: .7rem; font-size: .92rem; line-height: 1.5; }
+  .ps-col.problem .ps-list li { color: var(--text-muted); }
+  .ps-col.solution .ps-list li { color: rgba(255,255,255,.78); }
+  .ps-list li .ico { flex-shrink: 0; font-size: 1rem; margin-top: .1rem; }
+
+  /* ─── SERVICIOS ─── */
+  .services-section { background: var(--sand); }
+  .services-grid { max-width: 1200px; margin: 3rem auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.6rem; }
+  .service-card {
+    background: #fff; border-radius: 16px;
+    padding: 2rem; border: 1px solid var(--sand);
+    transition: transform .25s, box-shadow .25s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--green); transform: scaleX(0); transform-origin: left;
+    transition: transform .3s;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(15,28,46,.1); }
+
+  /* Badge "NUEVO" para WhatsApp */
+  .service-card .badge-new {
+    position: absolute; top: 1.1rem; right: 1.1rem;
+    background: var(--green); color: #fff;
+    font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+    padding: .25rem .65rem; border-radius: 99px;
+  }
+
+  .service-icon {
+    width: 52px; height: 52px; border-radius: 12px;
+    background: var(--green-pale); display: flex; align-items: flex-start; justify-content: center;
+    font-size: 1.6rem; margin-bottom: 1.2rem;
+  }
+  .service-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: .6rem; }
+  .service-card p  { color: var(--text-muted); font-size: .9rem; line-height: 1.6; }
+
+  /* ─── PROCESO ─── */
+  .process-section { background: var(--cream); }
+  .process-steps { max-width: 900px; margin: 3.5rem auto 0; position: relative; }
+  .process-steps::before {
+    content: ''; position: absolute; left: 27px; top: 0; bottom: 0; width: 2px;
+    background: linear-gradient(to bottom, var(--green), rgba(29,158,117,.1));
+  }
+  .step { display: flex; gap: 1.5rem; margin-bottom: 2.5rem; position: relative; }
+  .step-num {
+    flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%;
+    background: var(--navy); color: var(--green-light);
+    font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800;
+    display: flex; align-items: flex-start; justify-content: center;
+    border: 2px solid var(--green); z-index: 1;
+  }
+  .step-body h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .35rem; padding-top: .8rem; }
+  .step-body p { color: var(--text-muted); font-size: .9rem; line-height: 1.6; }
+
+  /* ─── PRECIOS ─── */
+  .pricing-section { background: var(--navy); }
+  .pricing-section .section-title { color: #fff; }
+  .pricing-section .section-sub { color: rgba(255,255,255,.55); }
+  .pricing-grid { max-width: 900px; margin: 3rem auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .pricing-card {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 18px; padding: 2.2rem;
+    transition: transform .25s;
+  }
+  .pricing-card.featured {
+    border-color: var(--green);
+    background: rgba(29,158,117,.1);
+    position: relative;
+  }
+  .pricing-card.featured::before {
+    content: attr(data-popular);
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--green); color: #fff;
+    font-size: .72rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+    padding: .25rem 1rem; border-radius: 99px;
+  }
+  .pricing-card:hover { transform: translateY(-4px); }
+  .pricing-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: .4rem; }
+  .pricing-price { font-family: 'Syne', sans-serif; font-size: 2.4rem; font-weight: 800; color: var(--green-light); margin: .8rem 0 .3rem; }
+  .pricing-price small { font-size: 1rem; font-weight: 400; color: rgba(255,255,255,.45); }
+  .pricing-desc { color: rgba(255,255,255,.5); font-size: .85rem; margin-bottom: 1.4rem; }
+  .pricing-features { list-style: none; display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1.8rem; }
+  .pricing-features li { display: flex; gap: .6rem; align-items: flex-start; font-size: .88rem; color: rgba(255,255,255,.75); }
+  .pricing-features li .chk { color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+  /* ─── KIT DIGITAL ─── */
+  .kit-section {
+    background: linear-gradient(135deg, var(--navy-mid) 0%, #0b2218 100%);
+    border-top: 2px solid rgba(29,158,117,.3);
+    border-bottom: 2px solid rgba(29,158,117,.3);
+  }
+  .kit-inner { max-width: 960px; margin: auto; display: flex; gap: 3rem; align-items: center; flex-wrap: wrap; }
+  .kit-badge {
+    flex-shrink: 0;
+    background: var(--green); color: #fff;
+    width: 120px; height: 120px; border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-weight: 800; text-align: center; line-height: 1.1;
+  }
+  .kit-badge .big { font-size: 1.5rem; }
+  .kit-badge .small { font-size: .72rem; opacity: .85; }
+  .kit-text h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; color: #fff; margin-bottom: .7rem; }
+  .kit-text p { color: rgba(255,255,255,.6); line-height: 1.65; font-size: .95rem; }
+  .kit-text .highlight { color: var(--green-light); font-weight: 600; }
+
+  /* ─── FORMULARIO ─── */
+  .contact-section { background: var(--cream); }
+  .contact-inner { max-width: 680px; margin: 3rem auto 0; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: .35rem; margin-bottom: 1rem; }
+  .form-group label { font-size: .82rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: .04em; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: .8rem 1rem; border-radius: 8px;
+    border: 1.5px solid var(--sand); background: #fff;
+    font-family: 'DM Sans', sans-serif; font-size: .95rem; color: var(--text);
+    transition: border-color .2s, box-shadow .2s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(29,158,117,.15);
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .form-submit {
+    width: 100%; padding: 1rem;
+    background: var(--green); color: #fff;
+    border: none; border-radius: 8px;
+    font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700;
+    cursor: pointer; transition: background .2s, transform .15s;
+  }
+  .form-submit:hover { background: var(--green-hover); transform: translateY(-1px); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--footer-bg);
+    padding: 3.5rem 5% 2.5rem;
+    border-top: 1px solid rgba(29,158,117,.2);
+  }
+  .footer-inner { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; }
+  .footer-logo span { color: var(--green); }
+  .footer-tagline { color: rgba(255,255,255,.38); font-size: .82rem; margin-top: .3rem; }
+  .footer-contact h4 { font-family: 'Syne', sans-serif; font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .07em; margin-bottom: .8rem; }
+  .footer-contact a { display: block; color: rgba(255,255,255,.65); text-decoration: none; font-size: .9rem; margin-bottom: .4rem; transition: color .2s; }
+  .footer-contact a:hover { color: var(--green-light); }
+  .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+  .footer-bottom p { color: rgba(255,255,255,.25); font-size: .8rem; }
+  .footer-bottom .green { color: var(--green); }
+
+  /* ─── TERRITORIO STRIP ─── */
+  .territory-strip {
+    background: var(--navy);
+    padding: 1.2rem 5%;
+    display: flex; align-items: flex-start; justify-content: center;
+    gap: 1.5rem; flex-wrap: wrap;
+  }
+  .territory-strip p { color: rgba(255,255,255,.55); font-size: .88rem; }
+  .territory-strip strong { color: var(--green-light); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero-card-wrap { display: none; }
+    .hero-inner { flex-direction: column; }
+    .ps-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+    .kit-badge { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="#" class="nav-logo">SanaConsult<span>IA</span></a>
+  <ul class="nav-links">
+    <li><a href="#servicios"><span data-es="Servicios" data-ca="Serveis">Serveis</span></a></li>
+    <li><a href="#proceso"><span data-es="Cómo funciona" data-ca="Com funciona">Com funciona</span></a></li>
+    <li><a href="#precios"><span data-es="Precios" data-ca="Preus">Preus</span></a></li>
+    <li><a href="#kit-digital"><span data-es="Kit Digital" data-ca="Kit Digital">Kit Digital</span></a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('ca')">CA</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+  <a href="#contacto" class="btn-cta" data-es="Solicitar reunión" data-ca="Sol·licitar reunió">Sol·licitar reunió</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+
+      <div class="territory-badge">
+        <span class="dot"></span>
+        <span data-es="Primera empresa de IA del Montseny" data-ca="Primera empresa d'IA del Montseny">Primera empresa d'IA del Montseny</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span data-es="Automatiza tu pyme">Automatitza la teva pyme</span><br><span data-es="con">amb</span> <span class="accent"><span data-es="Inteligencia Artificial" data-ca="Intel·ligència Artificial">Intel·ligència Artificial</span></span><br><span data-es="al mejor precio" data-ca="al millor preu">al millor preu</span>
+      </h1>
+
+      <div class="price-claim">
+        <span class="tag-icon">🏷️</span>
+        <span><strong><span data-es="Los mejores precios del mercado nacional" data-ca="Els millors preus del mercat nacional">Els millors preus del mercat nacional</span></strong> — <span data-es="sin renunciar a la calidad ni a la atención personalizada" data-ca="sense renunciar a la qualitat ni a l'atenció personalitzada">sense renunciar a la qualitat ni a l'atenció personalitzada</span></span>
+      </div>
+
+      <p class="hero-desc">
+        <span data-es="Implementamos automatizaciones con IA completamente a medida para tu negocio. Desde el Montseny, servimos a pymes de toda España con soluciones accesibles que antes solo estaban al alcance de las grandes." data-ca="Implementem automatitzacions amb IA completament a mida per al teu negoci. Des del Montseny, donem servei a pimes de tota Espanya amb solucions accessibles que abans només estaven a l'abast de les grans.">Implementem automatitzacions amb IA completament a mida per al teu negoci. Des del Montseny, donem servei a pimes de tota Espanya amb solucions accessibles que abans només estaven a l'abast de les grans.</span>
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contacto" class="btn-primary"><span data-es="Quiero automatizar mi empresa" data-ca="Vull automatitzar la meva empresa">Vull automatitzar la meva empresa</span></a>
+        <a href="#servicios" class="btn-outline"><span data-es="Ver servicios" data-ca="Veure serveis">Veure serveis</span></a>
+      </div>
+    </div>
+
+    <div class="hero-card-wrap">
+      <div class="sector-selector">
+        <div class="sector-selector-label"><span data-es="¿Cuál es tu sector?" data-ca="Quin és el teu sector?">Quin és el teu sector?</span></div>
+        <div class="sector-buttons">
+          <button class="sector-btn active" onclick="showSector('inmobiliaria', this)"><span data-es="🏠 Inmobiliaria" data-ca="🏠 Immobiliària">🏠 Immobiliària</span></button>
+          <button class="sector-btn" onclick="showSector('fisio', this)"><span data-es="💆 Fisioterapia" data-ca="💆 Fisioteràpia">💆 Fisioteràpia</span></button>
+          <button class="sector-btn" onclick="showSector('estetica', this)"><span data-es="✨ Estética y salud" data-ca="✨ Estètica i salut">✨ Estètica i salut</span></button>
+          <button class="sector-btn" onclick="showSector('dental', this)"><span data-es="🦷 Clínica dental" data-ca="🦷 Clínica dental">🦷 Clínica dental</span></button>
+        </div>
+
+        <button class="otros-btn" id="otros-toggle" onclick="toggleOtros()"><span data-es="+ Otros sectores — ver servicios disponibles" data-ca="+ Altres sectors — veure serveis disponibles">+ Altres sectors — veure serveis disponibles</span></button>
+
+        <div class="sector-detail active" id="sector-inmobiliaria">
+          <p class="sector-problem"><span data-es="❌ Leads que preguntan fuera de horario y no reciben respuesta. Horas perdidas cualificando contactos." data-ca="❌ Leads que pregunten fora d'horari i no reben resposta. Hores perdudes qualificant contactes.">❌ Leads que pregunten fora d'horari i no reben resposta. Hores perdudes qualificant contactes.</span></p>
+          <p class="sector-sol"><span data-es="✅ Agente IA en tu WhatsApp que cualifica leads 24/7, muestra propiedades y agenda visitas automáticamente." data-ca="✅ Agent IA al teu WhatsApp que qualifica leads 24/7, mostra propietats i agenda visites automàticament.">✅ Agent IA al teu WhatsApp que qualifica leads 24/7, mostra propietats i agenda visites automàticament.</span></p>
+          <a href="#contacto" class="btn-sector-demo"><span data-es="Solicitar demo gratuita →" data-ca="Sol·licitar demo gratuïta →">Sol·licitar demo gratuïta →</span></a>
+        </div>
+
+        <div class="sector-detail" id="sector-fisio">
+          <p class="sector-problem"><span data-es="❌ Tiempo perdido gestionando citas por teléfono. Pacientes que cancelan sin avisar." data-ca="❌ Temps perdut gestionant cites per telèfon. Pacients que cancel·len sense avisar.">❌ Temps perdut gestionant cites per telèfon. Pacients que cancel·len sense avisar.</span></p>
+          <p class="sector-sol"><span data-es="✅ Reservas, confirmaciones y recordatorios por WhatsApp totalmente automatizados." data-ca="✅ Reserves, confirmacions i recordatoris per WhatsApp totalment automatitzats.">✅ Reserves, confirmacions i recordatoris per WhatsApp totalment automatitzats.</span></p>
+          <a href="#contacto" class="btn-sector-demo">Solicitar demo gratuita →</a>
+        </div>
+
+        <div class="sector-detail" id="sector-estetica">
+          <p class="sector-problem"><span data-es="❌ Mensajes sin responder. Clientes perdidos por no atender a tiempo." data-ca="❌ Missatges sense respondre. Clients perduts per no atendre a temps.">❌ Missatges sense respondre. Clients perduts per no atendre a temps.</span></p>
+          <p class="sector-sol"><span data-es="✅ Agente IA que responde consultas, informa de servicios y gestiona reservas sin intervención humana." data-ca="✅ Agent IA que respon consultes, informa de serveis i gestiona reserves sense intervenció humana.">✅ Agent IA que respon consultes, informa de serveis i gestiona reserves sense intervenció humana.</span></p>
+          <a href="#contacto" class="btn-sector-demo">Solicitar demo gratuita →</a>
+        </div>
+
+        <div class="sector-detail" id="sector-dental">
+          <p class="sector-problem"><span data-es="❌ Recepción colapsada. Pacientes que no aparecen por falta de recordatorio." data-ca="❌ Recepció col·lapsada. Pacients que no apareixen per falta de recordatori.">❌ Recepció col·lapsada. Pacients que no apareixen per falta de recordatori.</span></p>
+          <p class="sector-sol"><span data-es="✅ Automatización de citas, recordatorios y atención de consultas frecuentes sin ocupar tu equipo." data-ca="✅ Automatització de cites, recordatoris i atenció de consultes freqüents sense ocupar el teu equip.">✅ Automatització de cites, recordatoris i atenció de consultes freqüents sense ocupar el teu equip.</span></p>
+          <a href="#contacto" class="btn-sector-demo">Solicitar demo gratuita →</a>
+        </div>
+
+        <div class="sector-detail" id="sector-otros">
+          <div class="otros-servicios">
+            <div class="otro-item">
+              <span class="otro-ico">🤖</span>
+              <div><strong><span data-es="Chatbot de captación" data-ca="Chatbot de captació">Chatbot de captació</span></strong><p><span data-es="Responde consultas y capta leads en tu web las 24h, sin intervención humana." data-ca="Respon consultes i capta leads a la teva web les 24h, sense intervenció humana.">Respon consultes i capta leads a la teva web les 24h, sense intervenció humana.</span></p></div>
+            </div>
+            <div class="otro-item">
+              <span class="otro-ico">💬</span>
+              <div><strong><span data-es="Agente IA en WhatsApp" data-ca="Agent IA al WhatsApp">Agent IA al WhatsApp</span></strong><p><span data-es="Atiende clientes, gestiona solicitudes y envía información de forma totalmente automatizada." data-ca="Atén clients, gestiona sol·licituds i envia informació de forma totalment automatitzada.">Atén clients, gestiona sol·licituds i envia informació de forma totalment automatitzada.</span></p></div>
+            </div>
+            <div class="otro-item">
+              <span class="otro-ico">⚙️</span>
+              <div><strong><span data-es="Automatización de procesos" data-ca="Automatització de processos">Automatització de processos</span></strong><p><span data-es="Elimina tareas manuales repetitivas: emails, presupuestos, seguimiento de clientes." data-ca="Elimina tasques manuals repetitives: emails, pressupostos, seguiment de clients.">Elimina tasques manuals repetitives: emails, pressupostos, seguiment de clients.</span></p></div>
+            </div>
+            <div class="otro-item">
+              <span class="otro-ico">🎯</span>
+              <div><strong><span data-es="Consultoría IA a medida" data-ca="Consultoria IA a mida">Consultoria IA a mida</span></strong><p><span data-es="Analizamos tu empresa y diseñamos el plan de automatización con ROI estimado." data-ca="Analitzem la teva empresa i dissenyem el pla d'automatització amb ROI estimat.">Analitzem la teva empresa i dissenyem el pla d'automatització amb ROI estimat.</span></p></div>
+            </div>
+          </div>
+          <a href="#contacto" class="btn-sector-demo"><span data-es="Solicitar reunión gratuita →" data-ca="Sol·licitar reunió gratuïta →">Sol·licitar reunió gratuïta →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS ─── -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <span class="stat-num"><span data-es="menos de 15 días" data-ca="menys de 15 dies">menys de 15 dies</span></span>
+      <div class="stat-desc"><span data-es="de entrega garantizada" data-ca="d'entrega garantida">d'entrega garantida</span></div>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-num">desde 350€</span>
+      <div class="stat-desc"><span data-es="precio de entrada" data-ca="preu d'entrada">preu d'entrada</span></div>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-num"><span data-es="30 días" data-ca="30 dies">30 dies</span></span>
+      <div class="stat-desc"><span data-es="garantía de satisfacción" data-ca="garantia de satisfacció">garantia de satisfacció</span></div>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-num">100%</span>
+      <div class="stat-desc"><span data-es="proyectos a medida" data-ca="projectes a mida">projectes a mida</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── BANNER PRECIOS ─── -->
+<div class="price-banner reveal">
+  <div class="price-banner-inner">
+    <div class="price-banner-text">
+      <h2>Els <span class="green"><span data-es="mejores precios de España" data-ca="millors preus d'Espanya">millors preus d'Espanya</span></span><br><span data-es="en automatización con IA para pymes" data-ca="en automatització amb IA per a pimes">en automatització amb IA per a pimes</span></h2>
+      <p><span data-es="Implementación profesional, soporte real y resultados medibles — sin letra pequeña." data-ca="Implementació professional, suport real i resultats mesurables — sense lletra petita.">Implementació professional, suport real i resultats mesurables — sense lletra petita.</span></p>
+    </div>
+    <div class="price-pillars">
+      <div class="pillar"><span class="ico">💰</span><span data-es="Precio imbatible" data-ca="Preu imbatible">Preu imbatible</span></div>
+      <div class="pillar"><span class="ico">🎯</span><span data-es="A medida de tu negocio" data-ca="A mida del teu negoci">A mida del teu negoci</span></div>
+      <div class="pillar"><span class="ico">🤝</span><span data-es="Atención personalizada" data-ca="Atenció personalitzada">Atenció personalitzada</span></div>
+      <div class="pillar"><span class="ico">🏅</span><span data-es="Calidad profesional" data-ca="Qualitat professional">Qualitat professional</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── PROBLEMA / SOLUCIÓN ─── -->
+<section class="problem-section reveal" id="por-que">
+  <div style="max-width:1100px;margin:auto;">
+    <div class="section-label"><span data-es="El problema" data-ca="El problema">El problema</span></div>
+    <h2 class="section-title"><span data-es="¿Te reconoces en esto?" data-ca="T'hi reconèixes?">T'hi reconèixes?</span></h2>
+    <p class="section-sub"><span data-es="La IA ya está transformando los negocios — pero muchas soluciones son caras, genéricas o están pensadas para grandes empresas." data-ca="La IA ja està transformant els negocis — però moltes solucions són cares, genèriques o estan pensades per a grans empreses.">La IA ja està transformant els negocis — però moltes solucions són cares, genèriques o estan pensades per a grans empreses.</span></p>
+    <div class="ps-grid" style="margin-top:2.5rem;">
+      <div class="ps-col problem reveal">
+        <h3><span data-es="❌ Lo que sufre tu pyme" data-ca="❌ El que pateix la teva pime">❌ El que pateix la teva pime</span></h3>
+        <ul class="ps-list">
+          <li><span class="ico">⏰</span><span data-es="Pierdes horas respondiendo siempre las mismas preguntas" data-ca="Perds hores responent sempre les mateixes preguntes">Perds hores responent sempre les mateixes preguntes</span></li>
+          <li><span class="ico">💸</span><span data-es="Las soluciones del mercado son demasiado caras o genéricas" data-ca="Les solucions del mercat són massa cares o genèriques">Les solucions del mercat són massa cares o genèriques</span></li>
+          <li><span class="ico">📉</span><span data-es="Pierdes leads porque no puedes atender 24/7" data-ca="Perds leads perquè no pots atendre 24/7">Perds leads perquè no pots atendre 24/7</span></li>
+          <li><span class="ico">🔄</span><span data-es="Tareas repetitivas que consumen tiempo de tu equipo" data-ca="Tasques repetitives que consumeixen temps del teu equip">Tasques repetitives que consumeixen temps del teu equip</span></li>
+          <li><span class="ico">🏢</span><span data-es="Las grandes consultoras no atienden a pymes con presupuesto ajustado" data-ca="Les grans consultores no atenen pimes amb pressupost ajustat">Les grans consultores no atenen pimes amb pressupost ajustat</span></li>
+        </ul>
+      </div>
+      <div class="ps-col solution reveal">
+        <h3><span data-es="✅ Lo que SanaConsultIA te da" data-ca="✅ El que SanaConsultIA et dona">✅ El que SanaConsultIA et dona</span></h3>
+        <ul class="ps-list">
+          <li><span class="ico">🤖</span><span data-es="Automatizaciones personalizadas, diseñadas solo para ti" data-ca="Automatitzacions personalitzades, dissenyades només per a tu">Automatitzacions personalitzades, dissenyades només per a tu</span></li>
+          <li><span class="ico">💚</span><span data-es="Los mejores precios del mercado nacional, garantizados" data-ca="Els millors preus del mercat nacional, garantits">Els millors preus del mercat nacional, garantits</span></li>
+          <li><span class="ico">🌙</span><span data-es="Agente IA disponible 24/7 en web, WhatsApp o email" data-ca="Agent IA disponible 24/7 a web, WhatsApp o email">Agent IA disponible 24/7 a web, WhatsApp o email</span></li>
+          <li><span class="ico">⚡</span><span data-es="Entrega en menos de 15 días, sin complicaciones técnicas" data-ca="Entrega en menys de 15 dies, sense complicacions tècniques">Entrega en menys de 15 dies, sense complicacions tècniques</span></li>
+          <li><span class="ico">📍</span><span data-es="Trato directo con Jordi, desde el Montseny para toda España" data-ca="Tracte directe amb en Jordi, des del Montseny per a tota Espanya">Tracte directe amb en Jordi, des del Montseny per a tota Espanya</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICIOS ─── -->
+<section class="services-section" id="servicios">
+  <div style="max-width:1200px;margin:auto;">
+    <div class="centered reveal">
+      <div class="section-label"><span data-es="Servicios" data-ca="Serveis">Serveis</span></div>
+      <h2 class="section-title"><span data-es="Todo lo que necesita tu pyme," data-ca="Tot el que necessita la teva pime,">Tot el que necessita la teva pime,</span><br><span class="accent"><span data-es="implementado a medida" data-ca="implementat a mida">implementat a mida</span></span></h2>
+      <p class="section-sub"><span data-es="Cada proyecto es único. Analizamos tu negocio y diseñamos la solución exacta que necesitas — sin plantillas genéricas." data-ca="Cada projecte és únic. Analitzem el teu negoci i dissenyem la solució exacta que necessites — sense plantilles genèriques.">Cada projecte és únic. Analitzem el teu negoci i dissenyem la solució exacta que necessites — sense plantilles genèriques.</span></p>
+    </div>
+
+    <div class="services-grid" style="margin-top:3rem;">
+
+      <!-- Chatbot captación -->
+      <div class="service-card reveal">
+        <div class="service-icon">🤖</div>
+        <h3><span data-es="Chatbot de captación" data-ca="Chatbot de captació">Chatbot de captació</span></h3>
+        <p><span data-es="Agente IA en tu web que captura leads, responde preguntas frecuentes y cualifica clientes potenciales, las 24 horas del día sin intervención humana." data-ca="Agent IA a la teva web que capta leads, respon preguntes freqüents i qualifica clients potencials, les 24 hores del dia sense intervenció humana.">Agent IA a la teva web que capta leads, respon preguntes freqüents i qualifica clients potencials, les 24 hores del dia sense intervenció humana.</span></p>
+      </div>
+
+      <!-- Agente WhatsApp — NUEVO -->
+      <div class="service-card reveal">
+        <span class="badge-new">Disponible</span>
+        <div class="service-icon">💬</div>
+        <h3><span data-es="Agente IA en WhatsApp" data-ca="Agent IA al WhatsApp">Agent IA al WhatsApp</span></h3>
+        <p><span data-es="Conecta un agente de inteligencia artificial al WhatsApp de tu empresa. Responde mensajes, atiende clientes, envía información y gestiona solicitudes de forma automática y completamente personalizada para tu negocio." data-ca="Connecta un agent d'intel·ligència artificial al WhatsApp de la teva empresa. Respon missatges, atén clients, envia informació i gestiona sol·licituds de forma automàtica i completament personalitzada per al teu negoci.">Connecta un agent d'intel·ligència artificial al WhatsApp de la teva empresa. Respon missatges, atén clients, envia informació i gestiona sol·licituds de forma automàtica i completament personalitzada per al teu negoci.</span></p>
+      </div>
+
+      <!-- Automatización procesos -->
+      <div class="service-card reveal">
+        <div class="service-icon">⚙️</div>
+        <h3><span data-es="Automatización de procesos" data-ca="Automatització de processos">Automatització de processos</span></h3>
+        <p><span data-es="Elimina tareas manuales repetitivas: gestión de emails, actualización de datos, envío de presupuestos, seguimiento de clientes. Tu equipo se centra en lo que realmente importa." data-ca="Elimina tasques manuals repetitives: gestió d'emails, actualització de dades, enviament de pressupostos, seguiment de clients. El teu equip es centra en el que realment importa.">Elimina tasques manuals repetitives: gestió d'emails, actualització de dades, enviament de pressupostos, seguiment de clients. El teu equip es centra en el que realment importa.</span></p>
+      </div>
+
+      <!-- Consultoría -->
+      <div class="service-card reveal">
+        <div class="service-icon">🎯</div>
+        <h3><span data-es="Consultoría IA a medida" data-ca="Consultoria IA a mida">Consultoria IA a mida</span></h3>
+        <p><span data-es="Analizamos tu empresa, identificamos qué procesos se pueden automatizar y te entregamos un plan de implementación concreto, con ROI estimado y prioridades claras." data-ca="Analitzem la teva empresa, identifiquem quins processos es poden automatitzar i t'entreguem un pla d'implementació concret, amb ROI estimat i prioritats clares.">Analitzem la teva empresa, identifiquem quins processos es poden automatitzar i t'entreguem un pla d'implementació concret, amb ROI estimat i prioritats clares.</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESO ─── -->
+<section class="process-section" id="proceso">
+  <div style="max-width:900px;margin:auto;">
+    <div class="reveal">
+      <div class="section-label"><span data-es="Cómo funciona" data-ca="Com funciona">Com funciona</span></div>
+      <h2 class="section-title"><span data-es="De cero a automatizado" data-ca="De zero a automatitzat">De zero a automatitzat</span><br><span class="accent"><span data-es="en 5 pasos" data-ca="en 5 passos">en 5 passos</span></span></h2>
+      <p class="section-sub"><span data-es="Un proceso sencillo, transparente y sin sorpresas. Tú te centras en tu negocio; nosotros implementamos la tecnología." data-ca="Un procés senzill, transparent i sense sorpreses. Tu et centres en el teu negoci; nosaltres implementem la tecnologia.">Un procés senzill, transparent i sense sorpreses. Tu et centres en el teu negoci; nosaltres implementem la tecnologia.</span></p>
+    </div>
+
+    <div class="process-steps" style="margin-top:3rem;">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3><span data-es="Reunión de diagnóstico gratuita" data-ca="Reunió de diagnòstic gratuïta">Reunió de diagnòstic gratuïta</span></h3>
+          <p><span data-es="Analizamos tu empresa, tus procesos actuales y los puntos donde la IA puede generar más valor. Sin compromiso y sin coste." data-ca="Analitzem la teva empresa, els teus processos actuals i els punts on la IA pot generar més valor. Sense compromís i sense cost.">Analitzem la teva empresa, els teus processos actuals i els punts on la IA pot generar més valor. Sense compromís i sense cost.</span></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3><span data-es="Propuesta personalizada" data-ca="Proposta personalitzada">Proposta personalitzada</span></h3>
+          <p><span data-es="Diseñamos una solución exacta para tu negocio, con presupuesto cerrado, plazo de entrega y resultados esperados." data-ca="Dissenyem una solució exacta per al teu negoci, amb pressupost tancat, termini d'entrega i resultats esperats.">Dissenyem una solució exacta per al teu negoci, amb pressupost tancat, termini d'entrega i resultats esperats.</span></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3><span data-es="Implementación en menos de 15 días" data-ca="Implementació en menys de 15 dies">Implementació en menys de 15 dies</span></h3>
+          <p><span data-es="Configuramos, conectamos y personalizamos la automatización. Tú no necesitas saber de tecnología — nosotros lo gestionamos todo." data-ca="Configurem, connectem i personalitzem l'automatització. Tu no necessites saber de tecnologia — nosaltres ho gestionem tot.">Configurem, connectem i personalitzem l'automatització. Tu no necessites saber de tecnologia — nosaltres ho gestionem tot.</span></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3><span data-es="Formación y entrega" data-ca="Formació i entrega">Formació i entrega</span></h3>
+          <p><span data-es="Te explicamos cómo funciona, cómo supervisarlo y cómo sacarle el máximo partido. Documentación incluida." data-ca="T'expliquem com funciona, com supervisar-lo i com treure'n el màxim partit. Documentació inclosa.">T'expliquem com funciona, com supervisar-lo i com treure'n el màxim partit. Documentació inclosa.</span></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">05</div>
+        <div class="step-body">
+          <h3><span data-es="Soporte continuo" data-ca="Suport continu">Suport continu</span></h3>
+          <p><span data-es="Seguimos contigo después del lanzamiento. Ajustamos, optimizamos y escalamos según evoluciona tu negocio." data-ca="Seguim amb tu després del llançament. Ajustem, optimitzem i escalem segons evoluciona el teu negoci.">Seguim amb tu després del llançament. Ajustem, optimitzem i escalem segons evoluciona el teu negoci.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRECIOS ─── -->
+<section class="pricing-section" id="precios">
+  <div style="max-width:900px;margin:auto;">
+    <div class="centered reveal">
+      <div class="section-label"><span data-es="Precios" data-ca="Preus">Preus</span></div>
+      <h2 class="section-title"><span data-es="Transparentes, accesibles" data-ca="Transparents, accessibles">Transparents, accessibles</span><br><span data-es="y" data-ca="i">i</span> <span class="accent"><span data-es="sin sorpresas" data-ca="sense sorpreses">sense sorpreses</span></span></h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.55)"><span data-es="Los mejores precios del mercado nacional en IA para pymes. Cada proyecto es único — estos son los precios base." data-ca="Els millors preus del mercat nacional en IA per a pimes. Cada projecte és únic — aquests són els preus base.">Els millors preus del mercat nacional en IA per a pimes. Cada projecte és únic — aquests són els preus base.</span></p>
+    </div>
+
+    <div class="pricing-grid" style="margin-top:3rem;">
+      <div class="pricing-card reveal">
+        <h3><span data-es="Implementación" data-ca="Implementació">Implementació</span></h3>
+        <div class="pricing-price">desde 350€ <small>/ <span data-es="proyecto" data-ca="projecte">projecte</span></small></div>
+        <p class="pricing-desc"><span data-es="Pago único. Proyecto cerrado, a medida de tu empresa." data-ca="Pagament únic. Projecte tancat, a mida de la teva empresa.">Pagament únic. Projecte tancat, a mida de la teva empresa.</span></p>
+        <ul class="pricing-features">
+          <li><span class="chk">✓</span><span data-es="Diagnóstico y propuesta gratis" data-ca="Diagnòstic i proposta gratis">Diagnòstic i proposta gratis</span></li>
+          <li><span class="chk">✓</span><span data-es="Diseño 100% a medida" data-ca="Disseny 100% a mida">Disseny 100% a mida</span></li>
+          <li><span class="chk">✓</span><span data-es="Entrega en menos de 15 días" data-ca="Entrega en menys de 15 dies">Entrega en menys de 15 dies</span></li>
+          <li><span class="chk">✓</span><span data-es="Formación incluida" data-ca="Formació inclosa">Formació inclosa</span></li>
+          <li><span class="chk">✓</span><span data-es="30 días de garantía" data-ca="30 dies de garantia">30 dies de garantia</span></li>
+        </ul>
+        <a href="#contacto" class="btn-primary" style="display:block;text-align:center;"><span data-es="Solicitar propuesta" data-ca="Sol·licitar proposta">Sol·licitar proposta</span></a>
+      </div>
+      <div class="pricing-card featured reveal" data-popular="Més popular">
+        <h3><span data-es="Mantenimiento mensual" data-ca="Manteniment mensual">Manteniment mensual</span></h3>
+        <div class="pricing-price">desde 50€ <small>/ mes</small></div>
+        <p class="pricing-desc"><span data-es="Sin permanencia. Cancela cuando quieras." data-ca="Sense permanència. Cancel·la quan vulguis.">Sense permanència. Cancel·la quan vulguis.</span></p>
+        <ul class="pricing-features">
+          <li><span class="chk">✓</span><span data-es="Soporte prioritario" data-ca="Suport prioritari">Suport prioritari</span></li>
+          <li><span class="chk">✓</span><span data-es="Actualizaciones y mejoras" data-ca="Actualitzacions i millores">Actualitzacions i millores</span></li>
+          <li><span class="chk">✓</span><span data-es="Monitorización continua" data-ca="Monitorització contínua">Monitorització contínua</span></li>
+          <li><span class="chk">✓</span><span data-es="Ajustes y optimizaciones" data-ca="Ajustos i optimitzacions">Ajustos i optimitzacions</span></li>
+          <li><span class="chk">✓</span><span data-es="Acceso a nuevas funcionalidades" data-ca="Accés a noves funcionalitats">Accés a noves funcionalitats</span></li>
+        </ul>
+        <a href="#contacto" class="btn-primary" style="display:block;text-align:center;"><span data-es="Empezar ahora" data-ca="Començar ara">Començar ara</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── KIT DIGITAL ─── -->
+<section class="kit-section" id="kit-digital">
+  <div class="kit-inner reveal">
+    <div class="kit-badge">
+      <div class="big"><span data-es="hasta" data-ca="fins a">fins a</span></div>
+      <div class="big" style="font-size:1.9rem">12.000€</div>
+      <div class="small"><span data-es="subvención" data-ca="subvenció">subvenció</span></div>
+    </div>
+    <div class="kit-text">
+      <h2><span data-es="Fináncialo con el Kit Digital" data-ca="Finança'l amb el Kit Digital">Finança'l amb el Kit Digital</span></h2>
+      <p>Si tu empresa tiene entre <span class="highlight"><span data-es="1 y 49 empleados" data-ca="1 i 49 empleats">1 i 49 empleats</span></span>, <span data-es="puedes acceder a subvenciones del Programa Kit Digital para digitalizar tu negocio con IA." data-ca="pots accedir a subvencions del Programa Kit Digital per digitalitzar el teu negoci amb IA.">pots accedir a subvencions del Programa Kit Digital per digitalitzar el teu negoci amb IA.</span> <span class="highlight"><span data-es="Hasta 12.000€ de ayuda europea" data-ca="Fins a 12.000€ d'ajuda europea">Fins a 12.000€ d'ajuda europea</span></span> <span data-es="que pueden cubrir el coste total de la implementación." data-ca="que poden cobrir el cost total de la implementació.">que poden cobrir el cost total de la implementació.</span><br><br><span data-es="Te acompañamos en todo el proceso de solicitud, sin coste adicional. La IA en tu empresa puede salirte" data-ca="T'acompanyem en tot el procés de sol·licitud, sense cost addicional. La IA a la teva empresa et pot sortir">T'acompanyem en tot el procés de sol·licitud, sense cost addicional. La IA a la teva empresa et pot sortir</span> <span class="highlight"><span data-es="gratis" data-ca="gratis">gratis</span></span>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TERRITORIO ─── -->
+<div class="territory-strip reveal">
+  <p>📍 <span data-es="Con sede en el" data-ca="Amb seu al">Amb seu al</span> <strong>Montseny, Barcelona</strong></p>
+  <p>•</p>
+  <p>🇪🇸 <span data-es="Servicios en toda" data-ca="Serveis a tota">Serveis a tota</span> <strong>España</strong></p>
+  <p>•</p>
+  <p>🏆 <strong><span data-es="Primera empresa especializada en IA" data-ca="Primera empresa especialitzada en IA">Primera empresa especialitzada en IA</span></strong> <span data-es="de la comarca del Montseny" data-ca="de la comarca del Montseny">de la comarca del Montseny</span></p>
+</div>
+
+<!-- ─── SECTORS ─── -->
+<section class="sectors-section" id="sectors" style="background:var(--cream);padding:90px 5%;">
+  <div style="max-width:1200px;margin:auto;">
+    <div class="centered reveal">
+      <div class="section-label"><span data-es="Sectores" data-ca="Sectors">Sectors</span></div>
+      <h2 class="section-title"><span data-es="Soluciones para tu sector," data-ca="Solucions per al teu sector,">Solucions per al teu sector,</span><br><span class="accent"><span data-es="no plantillas genéricas" data-ca="no plantilles genèriques">no plantilles genèriques</span></span></h2>
+      <p class="section-sub"><span data-es="Cada negocio tiene sus particularidades. Conocemos los retos de cada sector y diseñamos la IA que realmente necesitas." data-ca="Cada negoci té les seves particularitats. Coneixem els reptes de cada sector i dissenyem la IA que realment necessites.">Cada negoci té les seves particularitats. Coneixem els reptes de cada sector i dissenyem la IA que realment necessites.</span></p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;margin-top:3rem;">
+      <div class="service-card reveal"><div class="service-icon">🏠</div><h3><span data-es="Inmobiliarias" data-ca="Immobiliàries">Immobiliàries</span></h3><p style="color:var(--text-muted);font-size:.88rem;margin-bottom:.8rem;"><span data-es="Leads que preguntan fuera de horario y no reciben respuesta. Horas perdidas cualificando contactos." data-ca="Leads que pregunten fora d'horari i no reben resposta. Hores perdudes qualificant contactes.">Leads que pregunten fora d'horari i no reben resposta. Hores perdudes qualificant contactes.</span></p><p style="color:var(--text);font-size:.88rem;margin-bottom:.8rem;"><span data-es="✅ Agente IA en tu WhatsApp que cualifica leads 24/7, muestra propiedades y agenda visitas automáticamente." data-ca="✅ Agent IA al WhatsApp que qualifica leads 24/7, mostra propietats i agenda visites automàticament.">✅ Agent IA al WhatsApp que qualifica leads 24/7, mostra propietats i agenda visites automàticament.</span></p><div style="font-size:.72rem;color:var(--green);font-weight:600;">chatbot inmobiliaria · agente IA WhatsApp · automatizar leads</div></div>
+      <div class="service-card reveal"><div class="service-icon">💆</div><h3><span data-es="Fisioterapeutas" data-ca="Fisioterapeutes">Fisioterapeutes</span></h3><p style="color:var(--text-muted);font-size:.88rem;margin-bottom:.8rem;"><span data-es="Tiempo perdido gestionando citas por teléfono. Pacientes que cancelan sin avisar." data-ca="Temps perdut gestionant cites per telèfon. Pacients que cancel·len sense avisar.">Temps perdut gestionant cites per telèfon. Pacients que cancel·len sense avisar.</span></p><p style="color:var(--text);font-size:.88rem;margin-bottom:.8rem;"><span data-es="✅ Reservas, confirmaciones y recordatorios por WhatsApp totalmente automatizados." data-ca="✅ Reserves, confirmacions i recordatoris per WhatsApp totalment automatitzats.">✅ Reserves, confirmacions i recordatoris per WhatsApp totalment automatitzats.</span></p><div style="font-size:.72rem;color:var(--green);font-weight:600;">automatizar citas fisioterapia · recordatorio citas · chatbot reservas</div></div>
+      <div class="service-card reveal"><div class="service-icon">✨</div><h3><span data-es="Estética y salud" data-ca="Estètica i salut">Estètica i salut</span></h3><p style="color:var(--text-muted);font-size:.88rem;margin-bottom:.8rem;"><span data-es="Mensajes sin responder. Clientes perdidos por no atender a tiempo." data-ca="Missatges sense respondre. Clients perduts per no atendre a temps.">Missatges sense respondre. Clients perduts per no atendre a temps.</span></p><p style="color:var(--text);font-size:.88rem;margin-bottom:.8rem;"><span data-es="✅ Agente IA que responde consultas, informa de servicios y gestiona reservas sin intervención humana." data-ca="✅ Agent IA que respon consultes, informa de serveis i gestiona reserves sense intervenció humana.">✅ Agent IA que respon consultes, informa de serveis i gestiona reserves sense intervenció humana.</span></p><div style="font-size:.72rem;color:var(--green);font-weight:600;">chatbot centro estética · automatizar WhatsApp · reservas automáticas</div></div>
+      <div class="service-card reveal"><div class="service-icon">🦷</div><h3><span data-es="Clínicas dentales" data-ca="Clíniques dentals">Clíniques dentals</span></h3><p style="color:var(--text-muted);font-size:.88rem;margin-bottom:.8rem;"><span data-es="Recepción colapsada. Pacientes que no aparecen por falta de recordatorio." data-ca="Recepció col·lapsada. Pacients que no apareixen per falta de recordatori.">Recepció col·lapsada. Pacients que no apareixen per falta de recordatori.</span></p><p style="color:var(--text);font-size:.88rem;margin-bottom:.8rem;"><span data-es="✅ Automatización de citas, recordatorios y atención de consultas frecuentes sin ocupar tu equipo." data-ca="✅ Automatització de cites, recordatoris i atenció de consultes freqüents sense ocupar el teu equip.">✅ Automatització de cites, recordatoris i atenció de consultes freqüents sense ocupar el teu equip.</span></p><div style="font-size:.72rem;color:var(--green);font-weight:600;">chatbot clínica dental · automatizar citas dentista · recordatorio dental</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACTO ─── -->
+<section class="contact-section" id="contacto">
+  <div style="max-width:680px;margin:auto;">
+    <div class="centered reveal">
+      <div class="section-label"><span data-es="Contacto" data-ca="Contacte">Contacte</span></div>
+      <h2 class="section-title"><span data-es="Hablemos de tu proyecto" data-ca="Parlem del teu projecte">Parlem del teu projecte</span></h2>
+      <p class="section-sub"><span data-es="Reunión de diagnóstico gratuita y sin compromiso. En 30 minutos te decimos qué podemos automatizar en tu empresa y cuánto te costaría." data-ca="Reunió de diagnòstic gratuïta i sense compromís. En 30 minuts et diem què podem automatitzar a la teva empresa i quant et costaria.">Reunió de diagnòstic gratuïta i sense compromís. En 30 minuts et diem què podem automatitzar a la teva empresa i quant et costaria.</span></p>
+    </div>
+    <div class="contact-inner">
+      <form onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group">
+            <label><span data-es="Nombre" data-ca="Nom">Nom</span></label>
+            <input type="text" placeholder="El teu nom" data-placeholder-ca="El teu nom" data-placeholder-es="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label><span data-es="Empresa" data-ca="Empresa">Empresa</span></label>
+            <input type="text" placeholder="Nom de la teva empresa" data-placeholder-ca="Nom de la teva empresa" data-placeholder-es="Nombre de tu empresa">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="tu@empresa.com" data-placeholder-ca="tu@empresa.com" data-placeholder-es="tu@empresa.com">
+          </div>
+          <div class="form-group">
+            <label><span data-es="Teléfono" data-ca="Telèfon">Telèfon</span></label>
+            <input type="tel" placeholder="612 345 678" data-placeholder-ca="612 345 678" data-placeholder-es="612 345 678">
+          </div>
+        </div>
+        <div class="form-group">
+          <label><span data-es="Sector de tu empresa" data-ca="Sector de la teva empresa">Sector de la teva empresa</span></label>
+          <select>
+            <option value="" data-ca="Selecciona el teu sector..." data-es="Selecciona tu sector...">Selecciona el teu sector...</option>
+            <option data-ca="Immobiliària / Agència de propietats" data-es="Inmobiliaria / Agencia de propiedades">Immobiliària / Agència de propietats</option>
+            <option data-ca="Hostaleria i restauració" data-es="Hostelería y restauración">Hostaleria i restauració</option>
+            <option data-ca="Comerç i retail" data-es="Comercio y retail">Comerç i retail</option>
+            <option data-ca="Salut i clíniques" data-es="Salud y clínicas">Salut i clíniques</option>
+            <option data-ca="Serveis professionals (assessoria, gestoria...)" data-es="Servicios profesionales (asesoría, gestoría...)">Serveis professionals (assessoria, gestoria...)</option>
+            <option data-ca="Construcció i reformes" data-es="Construcción y reformas">Construcció i reformes</option>
+            <option data-ca="Turisme i allotjaments" data-es="Turismo y alojamientos">Turisme i allotjaments</option>
+            <option data-ca="Educació i formació" data-es="Educación y formación">Educació i formació</option>
+            <option data-ca="Altre sector" data-es="Otro sector">Altre sector</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label><span data-es="¿Qué quieres automatizar?" data-ca="Què vols automatitzar?">Què vols automatitzar?</span></label>
+          <textarea placeholder="Explica'ns breument què fa la teva empresa i quins processos creus que podries millorar amb IA. Sense tecnicismes — amb les teves paraules és perfecte." data-placeholder-ca="Explica'ns breument què fa la teva empresa i quins processos creus que podries millorar amb IA. Sense tecnicismes — amb les teves paraules és perfecte." data-placeholder-es="Cuéntanos brevemente qué hace tu empresa y qué procesos crees que podrías mejorar con IA. Sin tecnicismos — con tus palabras está perfecto."></textarea>
+        </div>
+        <button type="submit" class="form-submit"><span data-es="Solicitar reunión gratuita →" data-ca="Sol·licitar reunió gratuïta →">Sol·licitar reunió gratuïta →</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">SanaConsult<span>IA</span></div>
+      <p class="footer-tagline"><span data-es="Primera empresa de IA del Montseny." data-ca="Primera empresa d'IA del Montseny.">Primera empresa d'IA del Montseny.</span><br><span data-es="Automatización a medida para pymes de toda España." data-ca="Automatització a mida per a pimes de tota Espanya.">Automatització a mida per a pimes de tota Espanya.</span></p>
+    </div>
+    <div class="footer-contact">
+      <h4><span data-es="Contacto" data-ca="Contacte">Contacte</span></h4>
+      <a href="mailto:SanaConsultIA@gmail.com">SanaConsultIA@gmail.com</a>
+      <a href="tel:+34629881548">629 88 15 48</a>
+      <a href="https://sanaconsultia.es">sanaconsultia.es</a>
+    </div>
+    <div class="footer-contact">
+      <h4><span data-es="Servicios" data-ca="Serveis">Serveis</span></h4>
+      <a href="#servicios"><span data-es="Chatbot de captación" data-ca="Chatbot de captació">Chatbot de captació</span></a>
+      <a href="#servicios"><span data-es="Agente IA en WhatsApp" data-ca="Agent IA al WhatsApp">Agent IA al WhatsApp</span></a>
+      <a href="#servicios"><span data-es="Automatización de procesos" data-ca="Automatització de processos">Automatització de processos</span></a>
+      <a href="#servicios"><span data-es="Consultoría IA" data-ca="Consultoria IA">Consultoria IA</span></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SanaConsult<span class="green">IA</span> · Jordi Sanahuja · Barcelona</p>
+    <p><span data-es="Primera empresa especializada en IA del" data-ca="Primera empresa especialitzada en IA del">Primera empresa especialitzada en IA del</span> <span class="green">Montseny</span></p>
+  </div>
+</footer>
+
+<!-- ─── SCROLL REVEAL ─── -->
+<script>
+  function showSector(id, btn) {
+    document.querySelectorAll('.sector-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.sector-detail').forEach(d => d.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    document.getElementById('sector-' + id).classList.add('active');
+    document.getElementById('otros-toggle').classList.remove('active');
+  }
+  function toggleOtros() {
+    const btn = document.getElementById('otros-toggle');
+    const isActive = btn.classList.toggle('active');
+    document.querySelectorAll('.sector-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.sector-detail').forEach(d => d.classList.remove('active'));
+    if (isActive) document.getElementById('sector-otros').classList.add('active');
+  }
+</script>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<script>
+  function showSector(id) {
+    document.querySelectorAll('.sector-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.sector-detail').forEach(d => d.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+    document.getElementById('sector-' + id).classList.add('active');
+  }
+</script>
+
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (text && el.children.length === 0) el.textContent = text;
+      else if (text && el.tagName === 'SPAN' && el.children.length === 0) el.textContent = text;
+    });
+    document.querySelectorAll('span[data-es]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (text && el.children.length === 0) el.textContent = text;
+    });
+    document.querySelectorAll('[data-popular]').forEach(el => {
+      el.setAttribute('data-popular', lang === 'ca' ? 'Més popular' : 'Más popular');
+    });
+    const cta = document.querySelector('.btn-cta');
+    if (cta) cta.textContent = lang === 'ca' ? "Sol·licitar reunió" : "Solicitar reunión";
+    document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(el => {
+      const ca = el.getAttribute('data-placeholder-ca');
+      const es = el.getAttribute('data-placeholder-es');
+      if (ca && es) el.placeholder = lang === 'ca' ? ca : es;
+    });
+    document.querySelectorAll('option[data-ca]').forEach(el => {
+      el.textContent = lang === 'ca' ? el.getAttribute('data-ca') : el.getAttribute('data-es');
+    });
+  }
+  document.addEventListener('DOMContentLoaded', () => setLang('ca'));
+</script>
+
+</body>
+</html>
