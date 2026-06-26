@@ -560,10 +560,10 @@
         <div class="sector-selector-label"><span data-es="¿Cuál es tu sector?" data-ca="Quin és el teu sector?">Quin és el teu sector?</span></div>
         <div class="sector-buttons">
           <button class="sector-btn active" onclick="showSector('restaurantes', this); openPresentation('restaurantes')"><span data-es="🍽️ Restaurantes" data-ca="🍽️ Restaurants">🍽️ Restaurants</span></button>
-          <button class="sector-btn" onclick="showSector('inmobiliaria', this); window.open('presentaciones/inmobiliarias.html','_blank')"><span data-es="🏠 Inmobiliaria" data-ca="🏠 Immobiliària">🏠 Immobiliària</span></button>
-          <button class="sector-btn" onclick="showSector('fisio', this); window.open('presentaciones/fisioterapia.html','_blank')"><span data-es="💆 Fisioterapia" data-ca="💆 Fisioteràpia">💆 Fisioteràpia</span></button>
-          <button class="sector-btn" onclick="showSector('estetica', this); window.open('presentaciones/estetica.html','_blank')"><span data-es="✨ Estética" data-ca="✨ Estètica">✨ Estètica</span></button>
-          <button class="sector-btn" onclick="showSector('peluquerias', this); window.open('presentaciones/peluquerias.html','_blank')"><span data-es="✂️ Peluquerías" data-ca="✂️ Perruqueries">✂️ Perruqueries</span></button>
+          <button class="sector-btn" onclick="showSector('inmobiliaria', this); window.open('inmobiliarias.html','_blank')"><span data-es="🏠 Inmobiliaria" data-ca="🏠 Immobiliària">🏠 Immobiliària</span></button>
+          <button class="sector-btn" onclick="showSector('fisio', this); window.open('fisioterapia.html','_blank')"><span data-es="💆 Fisioterapia" data-ca="💆 Fisioteràpia">💆 Fisioteràpia</span></button>
+          <button class="sector-btn" onclick="showSector('estetica', this); window.open('estetica.html','_blank')"><span data-es="✨ Estética" data-ca="✨ Estètica">✨ Estètica</span></button>
+          <button class="sector-btn" onclick="showSector('peluquerias', this); window.open('peluquerias.html','_blank')"><span data-es="✂️ Peluquerías" data-ca="✂️ Perruqueries">✂️ Perruqueries</span></button>
         </div>
 
         <button class="otros-btn" id="otros-toggle" onclick="toggleOtros()"><span data-es="+ Otros sectores — ver servicios disponibles" data-ca="+ Altres sectors — veure serveis disponibles">+ Altres sectors — veure serveis disponibles</span></button>
@@ -1052,16 +1052,16 @@
   function openPresentation(sector) {
     const lang = window.currentLang || document.documentElement.lang || 'es';
     if (sector === 'restaurantes') {
-      const file = (lang === 'ca') ? 'presentaciones/restaurantes-ca.html' : 'presentaciones/restaurantes.html';
+      const file = (lang === 'ca') ? 'restaurantes-ca.html' : 'restaurantes.html';
       window.open(file, '_blank');
       return;
     }
     // fallback for other sectors (keeps original behavior)
     const mapping = {
-      'inmobiliaria': 'presentaciones/inmobiliarias.html',
-      'fisio': 'presentaciones/fisioterapia.html',
-      'estetica': 'presentaciones/estetica.html',
-      'peluquerias': 'presentaciones/peluquerias.html'
+      'inmobiliaria': 'inmobiliarias.html',
+      'fisio': 'fisioterapia.html',
+      'estetica': 'estetica.html',
+      'peluquerias': 'peluquerias.html'
     };
     const file = mapping[sector] || '#';
     if (file !== '#') window.open(file, '_blank');
