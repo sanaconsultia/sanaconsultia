@@ -1053,16 +1053,16 @@
     const lang = window.currentLang || document.documentElement.lang || 'es';
     // choose restaurants specially (has -ca variant)
     if (sector === 'restaurantes') {
-      const file = (lang === 'ca') ? 'restaurantes-ca.html' : 'restaurantes.html';
+      const file = (lang === 'ca') ? 'presentaciones/restaurantes-ca.html' : 'presentaciones/restaurantes.html';
       window.open(file, '_blank');
       return;
     }
     // mapping for other sectors: open -ca version when Catalan selected
     const mapping = {
-      'inmobiliaria': 'inmobiliarias.html',
-      'fisio': 'fisioterapia.html',
-      'estetica': 'estetica.html',
-      'peluquerias': 'peluquerias.html'
+      'inmobiliaria': 'presentaciones/inmobiliarias.html',
+      'fisio': 'presentaciones/fisioterapia.html',
+      'estetica': 'presentaciones/estetica.html',
+      'peluquerias': 'presentaciones/peluquerias.html'
     };
     const base = mapping[sector];
     if (!base) return;
