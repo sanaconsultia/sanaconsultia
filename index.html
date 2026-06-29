@@ -978,13 +978,6 @@
 
 <!-- ─── SCROLL REVEAL ─── -->
 <script>
-  function showSector(id, btn) {
-    document.querySelectorAll('.sector-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.sector-detail').forEach(d => d.classList.remove('active'));
-    if (btn) btn.classList.add('active');
-    document.getElementById('sector-' + id).classList.add('active');
-    document.getElementById('otros-toggle').classList.remove('active');
-  }
   function toggleOtros() {
     const btn = document.getElementById('otros-toggle');
     const isActive = btn.classList.toggle('active');
@@ -1019,6 +1012,7 @@
   function setLang(lang) {
     // track current language and update html lang attribute
     window.currentLang = lang;
+    localStorage.setItem('lang', lang);
     document.documentElement.lang = lang;
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
     document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
@@ -1045,12 +1039,12 @@
       el.textContent = lang === 'ca' ? el.getAttribute('data-ca') : el.getAttribute('data-es');
     });
   }
-  document.addEventListener('DOMContentLoaded', () => setLang('ca'));
+  document.addEventListener('DOMContentLoaded', () => setLang(localStorage.getItem('lang') || 'ca'));
 </script>
 
 <script>
   function openPresentation(sector) {
-    const lang = window.currentLang || document.documentElement.lang || 'es';
+    const lang = localStorage.getItem('lang') || window.currentLang || 'ca';
     if (sector === 'restaurantes') {
       const file = (lang === 'ca') ? 'presentaciones/restaurantes-ca.html' : 'presentaciones/restaurantes.html';
       window.open(file, '_blank');
