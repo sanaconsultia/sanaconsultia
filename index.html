@@ -978,6 +978,13 @@
 
 <!-- ─── SCROLL REVEAL ─── -->
 <script>
+  function showSector(id, btn) {
+    document.querySelectorAll('.sector-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.sector-detail').forEach(d => d.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    document.getElementById('sector-' + id).classList.add('active');
+    document.getElementById('otros-toggle').classList.remove('active');
+  }
   function toggleOtros() {
     const btn = document.getElementById('otros-toggle');
     const isActive = btn.classList.toggle('active');
@@ -1039,7 +1046,7 @@
       el.textContent = lang === 'ca' ? el.getAttribute('data-ca') : el.getAttribute('data-es');
     });
   }
-  document.addEventListener('DOMContentLoaded', () => setLang(localStorage.getItem('lang') || 'ca'));
+  document.addEventListener('DOMContentLoaded', () => setLang('ca'));
 </script>
 
 <script>
