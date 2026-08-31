@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | SanaConsultIA — Automatización con IA para pymes</title>
+<meta name="description" content="Casos reales y ejemplos de propuesta de SanaConsultIA: webs, sistemas de reservas y agentes de IA en WhatsApp para pymes.">
+<link rel="canonical" href="https://sanaconsultia.es/portfolio.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F1C2E; --navy-mid: #1A2D45; --green: #1D9E75; --green-hover: #15865f;
+    --green-light: #9FE1CB; --green-pale: #E1F5EE; --cream: #F7F5F0; --sand: #EDEBE4;
+    --text: #1A1A18; --text-muted: #6B6B66; --footer-bg: #060E18;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--cream); overflow-x: hidden; }
+  [data-lang="ca"] { display: none; }
+  .lang-switcher { display: flex; align-items: center; gap: 4px; margin-right: 1rem; }
+  .lang-btn { background: transparent; border: 1px solid rgba(255,255,255,.25); border-radius: 6px; color: rgba(255,255,255,.6); font-family: "DM Sans", sans-serif; font-size: .8rem; font-weight: 600; padding: 4px 10px; cursor: pointer; transition: all .2s; }
+  .lang-btn.active { background: var(--green); border-color: var(--green); color: #fff; }
+  .lang-btn:hover:not(.active) { border-color: var(--green-light); color: var(--green-light); }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%; height: 68px;
+    background: rgba(15,28,46,.92); backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(29,158,117,.18);
+  }
+  .nav-logo { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -.01em; }
+  .nav-logo span { color: var(--green); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,.78); text-decoration: none; font-size: .92rem; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--green-light); }
+  .btn-cta { background: var(--green); color: #fff; padding: .55rem 1.3rem; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 600; text-decoration: none; transition: background .2s, transform .15s; white-space: nowrap; }
+  .btn-cta:hover { background: var(--green-hover); transform: translateY(-1px); }
+
+  .pf-hero {
+    padding: 150px 5% 70px;
+    background: linear-gradient(155deg, var(--navy) 0%, #0d2238 55%, #0e2a1e 100%);
+    position: relative; overflow: hidden;
+  }
+  .pf-hero::after {
+    content: ''; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(29,158,117,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(29,158,117,.04) 1px, transparent 1px);
+    background-size: 48px 48px; pointer-events: none;
+  }
+  .pf-hero-inner { max-width: 900px; margin: auto; position: relative; z-index: 1; }
+  .section-label { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: .8rem; }
+  .pf-hero .section-label { color: var(--green-light); }
+  .pf-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem, 4vw, 3rem); color: #fff; line-height: 1.15; margin-bottom: 1rem; }
+  .pf-title .accent { color: var(--green); }
+  .pf-sub { color: rgba(255,255,255,.68); font-size: 1.05rem; line-height: 1.7; max-width: 640px; }
+
+  section.pf-section { padding: 80px 5%; }
+  .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 800; line-height: 1.2; color: var(--navy); margin-bottom: .6rem; }
+  .section-sub { color: var(--text-muted); font-size: 1rem; line-height: 1.6; max-width: 640px; margin-bottom: 2.5rem; }
+  .pf-wrap { max-width: 1100px; margin: auto; }
+
+  /* Caso real destacado */
+  .caso-card {
+    background: var(--navy); border-radius: 20px; padding: 2.4rem;
+    display: grid; grid-template-columns: auto 1fr; gap: 1.6rem; align-items: flex-start;
+  }
+  .caso-badge { background: var(--green); color: #fff; font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 99px; display: inline-block; margin-bottom: 1rem; }
+  .caso-card h3 { font-family: 'Syne', sans-serif; color: #fff; font-size: 1.4rem; font-weight: 700; margin-bottom: .5rem; }
+  .caso-card .sector { color: var(--green-light); font-size: .85rem; font-weight: 600; margin-bottom: 1rem; }
+  .caso-card p { color: rgba(255,255,255,.72); font-size: .95rem; line-height: 1.65; margin-bottom: .8rem; }
+  .caso-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-top: 1rem; }
+  .caso-list li { color: rgba(255,255,255,.78); font-size: .9rem; display: flex; gap: .6rem; }
+  .caso-list li .chk { color: var(--green); font-weight: 700; }
+
+  /* Grid ejemplos de propuesta */
+  .demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.6rem; }
+  .demo-card { background: #fff; border-radius: 16px; padding: 1.8rem; border: 1px solid var(--sand); transition: transform .25s, box-shadow .25s; }
+  .demo-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(15,28,46,.1); }
+  .demo-tag { display: inline-block; background: var(--green-pale); color: var(--green-hover); font-size: .68rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: .25rem .7rem; border-radius: 99px; margin-bottom: 1rem; }
+  .demo-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: .5rem; }
+  .demo-card p { color: var(--text-muted); font-size: .88rem; line-height: 1.6; margin-bottom: 1.2rem; }
+  .demo-link { color: var(--green-hover); font-weight: 700; font-size: .9rem; text-decoration: none; }
+  .demo-link:hover { text-decoration: underline; }
+  .pf-aviso { background: var(--sand); border-radius: 12px; padding: 1rem 1.4rem; font-size: .85rem; color: var(--text-muted); margin-top: 2rem; max-width: 700px; }
+
+  /* CTA final */
+  .pf-cta { background: var(--navy); text-align: center; }
+  .pf-cta h2 { font-family: 'Syne', sans-serif; color: #fff; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 1rem; }
+  .pf-cta p { color: rgba(255,255,255,.6); margin: 0 auto 2rem; max-width: 500px; }
+  .btn-primary { background: var(--green); color: #fff; padding: .9rem 2.2rem; border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: background .2s, transform .15s; box-shadow: 0 4px 24px rgba(29,158,117,.35); display: inline-block; }
+  .btn-primary:hover { background: var(--green-hover); transform: translateY(-2px); }
+
+  footer { background: var(--footer-bg); padding: 3.5rem 5% 2.5rem; border-top: 1px solid rgba(29,158,117,.2); }
+  .footer-inner { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
+  .footer-logo { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; }
+  .footer-logo span { color: var(--green); }
+  .footer-tagline { color: rgba(255,255,255,.38); font-size: .82rem; margin-top: .3rem; }
+  .footer-contact h4 { font-family: 'Syne', sans-serif; font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .07em; margin-bottom: .8rem; }
+  .footer-contact a { display: block; color: rgba(255,255,255,.65); text-decoration: none; font-size: .9rem; margin-bottom: .4rem; transition: color .2s; }
+  .footer-contact a:hover { color: var(--green-light); }
+  .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+  .footer-bottom p { color: rgba(255,255,255,.25); font-size: .8rem; }
+  .footer-bottom .green { color: var(--green); }
+
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    .caso-card { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">SanaConsult<span>IA</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#servicios"><span data-es="Servicios" data-ca="Serveis">Serveis</span></a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+    <li><a href="index.html#precios"><span data-es="Precios" data-ca="Preus">Preus</span></a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('ca')">CA</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+  <a href="index.html#contacto" class="btn-cta" data-es="Solicitar reunión" data-ca="Sol·licitar reunió">Sol·licitar reunió</a>
+</nav>
+
+<section class="pf-hero">
+  <div class="pf-hero-inner">
+    <div class="section-label"><span data-es="Portfolio" data-ca="Portfolio">Portfolio</span></div>
+    <h1 class="pf-title"><span data-es="Casos reales y" data-ca="Casos reals i">Casos reals i</span> <span class="accent"><span data-es="ejemplos de propuesta" data-ca="exemples de proposta">exemples de proposta</span></span></h1>
+    <p class="pf-sub"><span data-es="Un proyecto entregado y en funcionamiento, y varias muestras que enseño a negocios antes de trabajar juntos, para que vean exactamente lo que recibirían." data-ca="Un projecte entregat i en funcionament, i diverses mostres que ensenyo a negocis abans de treballar junts, perquè vegin exactament què rebrien.">Un projecte entregat i en funcionament, i diverses mostres que ensenyo a negocis abans de treballar junts, perquè vegin exactament què rebrien.</span></p>
+  </div>
+</section>
+
+<section class="pf-section reveal">
+  <div class="pf-wrap">
+    <div class="section-label"><span data-es="Cliente real" data-ca="Client real">Client real</span></div>
+    <h2 class="section-title"><span data-es="Proyecto entregado" data-ca="Projecte entregat">Projecte entregat</span></h2>
+    <p class="section-sub"><span data-es="Un caso ya en marcha, con contrato firmado y en uso." data-ca="Un cas ja en marxa, amb contracte signat i en ús.">Un cas ja en marxa, amb contracte signat i en ús.</span></p>
+
+    <div class="caso-card">
+      <div>
+        <div class="caso-badge">✓ <span data-es="Cliente firmado" data-ca="Client signat">Client signat</span></div>
+      </div>
+      <div>
+        <h3>Fulvia Estètica Avançada</h3>
+        <div class="sector"><span data-es="Centro de estética · Tàrrega" data-ca="Centre d'estètica · Tàrrega">Centre d'estètica · Tàrrega</span></div>
+        <p><span data-es="Web profesional y asistente de WhatsApp con inteligencia artificial, activo 24 horas, que gestiona las citas del centro de principio a fin." data-ca="Web professional i assistent de WhatsApp amb intel·ligència artificial, actiu 24 hores, que gestiona les cites del centre de principi a fi.">Web professional i assistent de WhatsApp amb intel·ligència artificial, actiu 24 hores, que gestiona les cites del centre de principi a fi.</span></p>
+        <ul class="caso-list">
+          <li><span class="chk">✓</span><span data-es="Web con información, servicios y precios orientativos" data-ca="Web amb informació, serveis i preus orientatius">Web amb informació, serveis i preus orientatius</span></li>
+          <li><span class="chk">✓</span><span data-es="Asistente de WhatsApp que responde dudas sobre tratamientos, horarios y precios" data-ca="Assistent de WhatsApp que respon dubtes sobre tractaments, horaris i preus">Assistent de WhatsApp que respon dubtes sobre tractaments, horaris i preus</span></li>
+          <li><span class="chk">✓</span><span data-es="Gestión completa de citas por chat: agendar, reagendar y cancelar" data-ca="Gestió completa de cites per xat: agendar, reagendar i cancel·lar">Gestió completa de cites per xat: agendar, reagendar i cancel·lar</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pf-section reveal" style="background: var(--sand);">
+  <div class="pf-wrap">
+    <div class="section-label"><span data-es="Muestras" data-ca="Mostres">Mostres</span></div>
+    <h2 class="section-title"><span data-es="Ejemplos de propuesta" data-ca="Exemples de proposta">Exemples de proposta</span></h2>
+    <p class="section-sub"><span data-es="Antes de que un negocio decida trabajar conmigo, suelo preparar una muestra real y navegable con sus propios datos. Estas son algunas, para que veas el nivel de acabado." data-ca="Abans que un negoci decideixi treballar amb mi, sol preparar una mostra real i navegable amb les seves pròpies dades. Aquestes són algunes, perquè vegis el nivell d'acabat.">Abans que un negoci decideixi treballar amb mi, sol preparar una mostra real i navegable amb les seves pròpies dades. Aquestes són algunes, perquè vegis el nivell d'acabat.</span></p>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <span class="demo-tag"><span data-es="Muestra de propuesta" data-ca="Mostra de proposta">Mostra de proposta</span></span>
+        <h3>Restaurante Chino Fortuna</h3>
+        <p><span data-es="Web + catálogo de pedidos para llevar, con casi 90 platos reales de su carta." data-ca="Web + catàleg de comandes per emportar, amb gairebé 90 plats reals de la seva carta.">Web + catàleg de comandes per emportar, amb gairebé 90 plats reals de la seva carta.</span></p>
+        <a class="demo-link" href="https://extraordinary-baklava-54fd08.netlify.app" target="_blank" rel="noopener"><span data-es="Ver muestra →" data-ca="Veure mostra →">Veure mostra →</span></a>
+      </div>
+      <div class="demo-card">
+        <span class="demo-tag"><span data-es="Muestra de propuesta" data-ca="Mostra de proposta">Mostra de proposta</span></span>
+        <h3>La Clau del Rebost</h3>
+        <p><span data-es="Web + sistema de reservas, con conversación de ejemplo del futuro asistente de WhatsApp." data-ca="Web + sistema de reserves, amb conversa d'exemple del futur assistent de WhatsApp.">Web + sistema de reserves, amb conversa d'exemple del futur assistent de WhatsApp.</span></p>
+        <a class="demo-link" href="https://inquisitive-alpaca-61671e.netlify.app" target="_blank" rel="noopener"><span data-es="Ver muestra →" data-ca="Veure mostra →">Veure mostra →</span></a>
+      </div>
+      <div class="demo-card">
+        <span class="demo-tag"><span data-es="Muestra de propuesta" data-ca="Mostra de proposta">Mostra de proposta</span></span>
+        <h3>Ennedit Handmade</h3>
+        <p><span data-es="Web + catálogo de producto con carrito y pedido directo por WhatsApp, para una marca textil." data-ca="Web + catàleg de producte amb carret i comanda directa per WhatsApp, per a una marca tèxtil.">Web + catàleg de producte amb carret i comanda directa per WhatsApp, per a una marca tèxtil.</span></p>
+        <a class="demo-link" href="https://resplendent-marshmallow-238424.netlify.app" target="_blank" rel="noopener"><span data-es="Ver muestra →" data-ca="Veure mostra →">Veure mostra →</span></a>
+      </div>
+    </div>
+
+    <div class="pf-aviso"><span data-es="Estas muestras se hicieron para presentar la propuesta a cada negocio — no son necesariamente clientes contratados. El caso de Fulvia, arriba, sí es un proyecto real entregado y en uso." data-ca="Aquestes mostres es van fer per presentar la proposta a cada negoci — no són necessàriament clients contractats. El cas de Fulvia, a dalt, sí que és un projecte real entregat i en ús.">Aquestes mostres es van fer per presentar la proposta a cada negoci — no són necessàriament clients contractats. El cas de Fulvia, a dalt, sí que és un projecte real entregat i en ús.</span></div>
+  </div>
+</section>
+
+<section class="pf-section pf-cta reveal">
+  <h2><span data-es="¿Hablamos de tu negocio?" data-ca="Parlem del teu negoci?">Parlem del teu negoci?</span></h2>
+  <p><span data-es="Te preparo una muestra real con tus propios datos, sin compromiso." data-ca="Et preparo una mostra real amb les teves pròpies dades, sense compromís.">Et preparo una mostra real amb les teves pròpies dades, sense compromís.</span></p>
+  <a href="index.html#contacto" class="btn-primary"><span data-es="Solicitar mi muestra" data-ca="Sol·licitar la meva mostra">Sol·licitar la meva mostra</span></a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">SanaConsult<span>IA</span></div>
+      <p class="footer-tagline"><span data-es="Primera empresa de IA del Montseny." data-ca="Primera empresa d'IA del Montseny.">Primera empresa d'IA del Montseny.</span><br><span data-es="Automatización a medida para pymes de toda España." data-ca="Automatització a mida per a pimes de tota Espanya.">Automatització a mida per a pimes de tota Espanya.</span></p>
+    </div>
+    <div class="footer-contact">
+      <h4><span data-es="Contacto" data-ca="Contacte">Contacte</span></h4>
+      <a href="mailto:SanaConsultIA@gmail.com">SanaConsultIA@gmail.com</a>
+      <a href="tel:+34629881548">629 88 15 48</a>
+      <a href="https://sanaconsultia.es">sanaconsultia.es</a>
+    </div>
+    <div class="footer-contact">
+      <h4><span data-es="Servicios" data-ca="Serveis">Serveis</span></h4>
+      <a href="index.html#servicios"><span data-es="Chatbot de captación" data-ca="Chatbot de captació">Chatbot de captació</span></a>
+      <a href="index.html#servicios"><span data-es="Agente IA en WhatsApp" data-ca="Agent IA al WhatsApp">Agent IA al WhatsApp</span></a>
+      <a href="index.html#servicios"><span data-es="Automatización de procesos" data-ca="Automatització de processos">Automatització de processos</span></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SanaConsult<span class="green">IA</span> · Jordi Sanahuja · Barcelona</p>
+    <p><span data-es="Primera empresa especializada en IA del" data-ca="Primera empresa especialitzada en IA del">Primera empresa especialitzada en IA del</span> <span class="green">Montseny</span></p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<script>
+  function setLang(lang) {
+    window.currentLang = lang;
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+    document.querySelectorAll('span[data-es]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (text && el.children.length === 0) el.textContent = text;
+    });
+  }
+  (function () {
+    const saved = localStorage.getItem('lang');
+    if (saved) setLang(saved);
+  })();
+</script>
+</body>
+</html>
