@@ -928,30 +928,30 @@
       <p class="section-sub"><span data-es="Reunión de diagnóstico gratuita y sin compromiso. En 30 minutos te decimos qué podemos automatizar en tu empresa y cuánto te costaría." data-ca="Reunió de diagnòstic gratuïta i sense compromís. En 30 minuts et diem què podem automatitzar a la teva empresa i quant et costaria.">Reunió de diagnòstic gratuïta i sense compromís. En 30 minuts et diem què podem automatitzar a la teva empresa i quant et costaria.</span></p>
     </div>
     <div class="contact-inner">
-      <form onsubmit="return false;">
+      <form id="contact-form">
         <div class="form-row">
           <div class="form-group">
             <label><span data-es="Nombre" data-ca="Nom">Nom</span></label>
-            <input type="text" placeholder="El teu nom" data-placeholder-ca="El teu nom" data-placeholder-es="Tu nombre">
+            <input type="text" id="cf-nombre" name="nombre" required placeholder="El teu nom" data-placeholder-ca="El teu nom" data-placeholder-es="Tu nombre">
           </div>
           <div class="form-group">
             <label><span data-es="Empresa" data-ca="Empresa">Empresa</span></label>
-            <input type="text" placeholder="Nom de la teva empresa" data-placeholder-ca="Nom de la teva empresa" data-placeholder-es="Nombre de tu empresa">
+            <input type="text" id="cf-empresa" name="empresa" placeholder="Nom de la teva empresa" data-placeholder-ca="Nom de la teva empresa" data-placeholder-es="Nombre de tu empresa">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>Email</label>
-            <input type="email" placeholder="tu@empresa.com" data-placeholder-ca="tu@empresa.com" data-placeholder-es="tu@empresa.com">
+            <input type="email" id="cf-email" name="email" required placeholder="tu@empresa.com" data-placeholder-ca="tu@empresa.com" data-placeholder-es="tu@empresa.com">
           </div>
           <div class="form-group">
             <label><span data-es="Teléfono" data-ca="Telèfon">Telèfon</span></label>
-            <input type="tel" placeholder="612 345 678" data-placeholder-ca="612 345 678" data-placeholder-es="612 345 678">
+            <input type="tel" id="cf-telefono" name="telefono" placeholder="612 345 678" data-placeholder-ca="612 345 678" data-placeholder-es="612 345 678">
           </div>
         </div>
         <div class="form-group">
           <label><span data-es="Sector de tu empresa" data-ca="Sector de la teva empresa">Sector de la teva empresa</span></label>
-          <select>
+          <select id="cf-sector" name="sector">
             <option value="" data-ca="Selecciona el teu sector..." data-es="Selecciona tu sector...">Selecciona el teu sector...</option>
             <option data-ca="Immobiliària / Agència de propietats" data-es="Inmobiliaria / Agencia de propiedades">Immobiliària / Agència de propietats</option>
             <option data-ca="Hostaleria i restauració" data-es="Hostelería y restauración">Hostaleria i restauració</option>
@@ -966,9 +966,10 @@
         </div>
         <div class="form-group">
           <label><span data-es="¿Qué quieres automatizar?" data-ca="Què vols automatitzar?">Què vols automatitzar?</span></label>
-          <textarea placeholder="Explica'ns breument què fa la teva empresa i quins processos creus que podries millorar amb IA. Sense tecnicismes — amb les teves paraules és perfecte." data-placeholder-ca="Explica'ns breument què fa la teva empresa i quins processos creus que podries millorar amb IA. Sense tecnicismes — amb les teves paraules és perfecte." data-placeholder-es="Cuéntanos brevemente qué hace tu empresa y qué procesos crees que podrías mejorar con IA. Sin tecnicismos — con tus palabras está perfecto."></textarea>
+          <textarea id="cf-mensaje" name="mensaje" placeholder="Explica'ns breument què fa la teva empresa i quins processos creus que podries millorar amb IA. Sense tecnicismes — amb les teves paraules és perfecte." data-placeholder-ca="Explica'ns breument què fa la teva empresa i quins processos creus que podries millorar amb IA. Sense tecnicismes — amb les teves paraules és perfecte." data-placeholder-es="Cuéntanos brevemente qué hace tu empresa y qué procesos crees que podrías mejorar con IA. Sin tecnicismos — con tus palabras está perfecto."></textarea>
         </div>
-        <button type="submit" class="form-submit"><span data-es="Solicitar reunión gratuita →" data-ca="Sol·licitar reunió gratuïta →">Sol·licitar reunió gratuïta →</span></button>
+        <button type="submit" class="form-submit" id="cf-submit-btn"><span data-es="Solicitar reunión gratuita →" data-ca="Sol·licitar reunió gratuïta →">Sol·licitar reunió gratuïta →</span></button>
+        <p id="cf-status" style="margin-top:.8rem;font-size:.92rem;display:none;"></p>
       </form>
     </div>
   </div>
@@ -1000,6 +1001,51 @@
     <p><span data-es="Primera empresa especializada en IA del" data-ca="Primera empresa especialitzada en IA del">Primera empresa especialitzada en IA del</span> <span class="green">Montseny</span></p>
   </div>
 </footer>
+
+<!-- ─── FORMULARIO DE CONTACTO → CRM (Airtable, vía API del bot) ─── -->
+<script>
+  const LEAD_API_URL = 'https://sanaconsultia-agente-watsapp-agente-whatsapp.xqkanx.easypanel.host/api/lead-web';
+  const CF_MSG = {
+    sending: { es: 'Enviando...', ca: 'Enviant...' },
+    ok: { es: '¡Gracias! Te contactaré en menos de 24h.', ca: 'Gràcies! Et contactaré en menys de 24h.' },
+    err: { es: 'No se pudo enviar. Escríbenos a SanaConsultIA@gmail.com', ca: 'No s\'ha pogut enviar. Escriu-nos a SanaConsultIA@gmail.com' },
+  };
+  document.getElementById('contact-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const lang = window.currentLang || 'ca';
+    const btn = document.getElementById('cf-submit-btn');
+    const status = document.getElementById('cf-status');
+    const payload = {
+      nombre: document.getElementById('cf-nombre').value.trim(),
+      empresa: document.getElementById('cf-empresa').value.trim(),
+      email: document.getElementById('cf-email').value.trim(),
+      telefono: document.getElementById('cf-telefono').value.trim(),
+      sector: document.getElementById('cf-sector').value,
+      mensaje: document.getElementById('cf-mensaje').value.trim(),
+    };
+    btn.disabled = true;
+    status.style.display = 'block';
+    status.style.color = '#666';
+    status.textContent = CF_MSG.sending[lang];
+    try {
+      const res = await fetch(LEAD_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error(data.error || ('HTTP ' + res.status));
+      status.style.color = '#2e7d32';
+      status.textContent = CF_MSG.ok[lang];
+      document.getElementById('contact-form').reset();
+    } catch (err) {
+      status.style.color = '#c62828';
+      status.textContent = CF_MSG.err[lang];
+    } finally {
+      btn.disabled = false;
+    }
+  });
+</script>
 
 <!-- ─── SCROLL REVEAL ─── -->
 <script>
