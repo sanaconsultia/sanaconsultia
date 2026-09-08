@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SanaConsultIA – Revolución en Reservas</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1a1a2e;
+  --navy2:#16213e;
+  --gold:#c8a96e;
+  --cream:#f5f0e8;
+  --white:#ffffff;
+}
+html{scroll-snap-type:y mandatory;overflow-y:scroll;}
+body{font-family:'Inter',sans-serif;}
+.slide{min-height:100vh;scroll-snap-align:start;display:flex;position:relative;}
+.nav{position:fixed;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:100;}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(200,169,110,0.25);cursor:pointer;transition:all 0.3s;}
+.dot.active{background:var(--gold);transform:scale(1.4);}
+.s1{flex-direction:row;}
+.s1-img{flex:1;overflow:hidden;}
+.s1-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.s1-text{flex:1;background:var(--navy);display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:120px 60px 60px;gap:28px;min-height:100vh;}
+.s1-logo{font-size:11px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;font-weight:500;}
+.s1-title{font-family:'Playfair Display',serif;font-size:clamp(38px,4.5vw,56px);font-weight:700;color:var(--white);line-height:1.12;}
+.s1-title em{color:var(--gold);font-style:normal;}
+.s1-line{width:52px;height:1px;background:var(--gold);}
+.s1-sub{font-size:15px;color:rgba(255,255,255,0.4);font-weight:300;line-height:1.7;}
+.s2{background:var(--cream);flex-direction:column;justify-content:center;padding:100px 60px;gap:50px;}
+.s2-label{font-size:11px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;font-weight:600;}
+.s2-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--navy);max-width:850px;line-height:1.2;}
+.s2-stats{display:flex;gap:30px;flex-wrap:wrap;}
+.s2-stat{background:var(--white);border-radius:8px;padding:32px;flex:1;min-width:240px;box-shadow:0 4px 20px rgba(0,0,0,0.05);}
+.s2-stat-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--gold);}
+.s2-stat-text{font-size:14px;color:#555;margin-top:10px;line-height:1.6;}
+.s3{background:var(--navy);flex-direction:column;justify-content:center;padding:100px 60px;gap:48px;}
+.s3-label{font-size:11px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;font-weight:600;}
+.s3-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--white);max-width:850px;line-height:1.2;}
+.s3-pills{display:flex;flex-wrap:wrap;gap:14px;}
+.s3-pill{border:1px solid rgba(200,169,110,0.3);border-radius:30px;padding:14px 26px;color:var(--white);font-size:14px;}
+.s4{background:var(--cream);flex-direction:column;justify-content:center;padding:100px 60px;gap:48px;}
+.s4-label{font-size:11px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;font-weight:600;}
+.s4-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--navy);}
+.s4-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;}
+.s4-item{text-align:center;}
+.s4-icon{font-size:34px;margin-bottom:10px;}
+.s4-item strong{display:block;font-size:15px;color:var(--navy);margin-bottom:6px;}
+.s4-item p{font-size:13px;color:#666;line-height:1.5;}
+.s5{background:var(--navy);flex-direction:column;justify-content:center;padding:100px 60px;gap:40px;}
+.s5-label{font-size:11px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;font-weight:600;}
+.s5-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--white);}
+.s5-flow{display:flex;flex-direction:column;align-items:flex-start;gap:14px;}
+.s5-row{display:flex;flex-wrap:wrap;gap:14px;}
+.s5-box{border-radius:10px;padding:16px 22px;font-size:14px;font-weight:600;border:1px solid;}
+.s5-box.dark{background:var(--navy2);border-color:rgba(200,169,110,0.4);color:var(--gold);}
+.s5-box.green{background:rgba(80,200,160,0.12);border-color:rgba(80,200,160,0.4);color:#7fe0c0;}
+.s5-box.amber{background:rgba(255,200,100,0.12);border-color:rgba(255,200,100,0.4);color:#ffd27a;}
+.s5-arrow{color:var(--gold);font-size:18px;align-self:center;}
+.s6{background:var(--navy2);flex-direction:column;justify-content:center;padding:100px 60px;gap:48px;}
+.s6-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--white);}
+.s6-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+.s6-card{background:rgba(255,255,255,0.04);border:1px solid rgba(200,169,110,0.2);border-radius:10px;padding:28px;}
+.s6-card-label{font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;font-weight:700;margin-bottom:10px;}
+.s6-card p{font-size:15px;color:rgba(255,255,255,0.75);line-height:1.6;}
+.s6-cta{align-self:flex-start;background:var(--gold);color:var(--navy);padding:18px 40px;border-radius:6px;font-weight:700;font-size:15px;text-decoration:none;display:inline-block;}
+.s7{background:var(--navy);flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 60px;gap:40px;}
+.s7-title{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:700;color:var(--white);}
+.s7-sub{font-size:16px;color:rgba(255,255,255,0.6);}
+.s7-grid{display:flex;gap:50px;flex-wrap:wrap;justify-content:center;}
+.s7-item{text-align:center;}
+.s7-item .icon{font-size:28px;margin-bottom:10px;}
+.s7-item .label{font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.s7-item p{font-size:16px;color:var(--white);}
+@media(max-width:768px){
+  .s1{flex-direction:column;}
+  .s1-img{height:280px;}
+  .s1-text{padding:60px 30px;}
+}
+</style>
+</head>
+<body>
+<div class="nav" id="navDots"></div>
+<section class="slide s1">
+  <div class="s1-img"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1200&q=80" alt="Peluquería"></div>
+  <div class="s1-text">
+    <div class="s1-logo">SanaConsultIA</div>
+    <h1 class="s1-title">Revolució en <em>Cites</em></h1>
+    <div class="s1-line"></div>
+    <p class="s1-sub">Agent de veu amb intel·ligència artificial<br>per a perruqueries</p>
+  </div>
+</section>
+<section class="slide s2">
+  <div class="s2-label">El problema</div>
+  <h2 class="s2-title">Cada trucada sense resposta és una cita perduda</h2>
+  <div class="s2-stats">
+    <div class="s2-stat"><div class="s2-stat-num">1 de 3</div><div class="s2-stat-text">Els clients no deixen missatge de veu — truquen directament a una altra perruqueria</div></div>
+    <div class="s2-stat"><div class="s2-stat-num">100%</div><div class="s2-stat-text">Del personal està ocupat amb clients i no pot atendre el telèfon</div></div>
+    <div class="s2-stat"><div class="s2-stat-num">24h</div><div class="s2-stat-text">És el temps que opera l'agent, sense descans, caps de setmana i festius inclosos</div></div>
+  </div>
+</section>
+<section class="slide s3">
+  <div class="s3-label">La solució</div>
+  <h2 class="s3-title">Un recepcionista virtual que mai perd una cita</h2>
+  <div class="s3-pills">
+    <div class="s3-pill">Respon en l'idioma que esculli el client</div>
+    <div class="s3-pill">Disponible 24 hores</div>
+    <div class="s3-pill">Recull nom, data, hora i servei desitjat</div>
+    <div class="s3-pill">Confirma la cita a l'instant</div>
+    <div class="s3-pill">Sense intervenció humana</div>
+    <div class="s3-pill">Caps de setmana i festius</div>
+  </div>
+</section>
+<section class="slide s4">
+  <div class="s4-label">Com funciona</div>
+  <h2 class="s4-title">De la trucada a la cita confirmada</h2>
+  <div class="s4-steps">
+    <div class="s4-item"><div class="s4-icon">📞</div><strong>Truca el client</strong><p>Al número habitual de la perruqueria</p></div>
+    <div class="s4-item"><div class="s4-icon">🤖</div><strong>Respon l'agent</strong><p>En català, de forma natural</p></div>
+    <div class="s4-item"><div class="s4-icon">💬</div><strong>Recull les dades</strong><p>Nom, data, hora i servei</p></div>
+    <div class="s4-item"><div class="s4-icon">✅</div><strong>Confirma</strong><p>El client penja amb la seva cita programada</p></div>
+    <div class="s4-item"><div class="s4-icon">📧</div><strong>Notifica</strong><p>Correu i calendari actualitzats</p></div>
+    <div class="s4-item"><div class="s4-icon">🔔</div><strong>Recorda</strong><p>Recordatori al client 24h abans</p></div>
+  </div>
+</section>
+<section class="slide s5">
+  <div class="s5-label">El flux complet</div>
+  <h2 class="s5-title">Visió tècnica del procés</h2>
+  <div class="s5-flow">
+    <div class="s5-box dark">📞 Client truca</div>
+    <div class="s5-arrow">↓</div>
+    <div class="s5-box dark">🤖 Agent de veu IA</div>
+    <div class="s5-arrow">↓</div>
+    <div class="s5-box dark">💬 Nom · Data · Hora · Servei</div>
+    <div class="s5-arrow">↓</div>
+    <div class="s5-box green">✅ Cita confirmada i guardada</div>
+    <div class="s5-row">
+      <div class="s5-box amber">📧 Correu a la perruqueria</div>
+      <div class="s5-box amber">📅 Google Calendar</div>
+    </div>
+    <div class="s5-arrow">↓</div>
+    <div class="s5-box amber">🔔 Recordatori 24h abans al client</div>
+  </div>
+</section>
+<section class="slide s6">
+  <h2 class="s6-title">Sense risc per a la perruqueria</h2>
+  <div class="s6-grid">
+    <div class="s6-card"><div class="s6-card-label">Implementació</div><p>Tarifa única per posada en marxa i configuració del sistema</p></div>
+    <div class="s6-card"><div class="s6-card-label">Manteniment</div><p>Quota mensual que inclou suport, actualitzacions i millores</p></div>
+    <div class="s6-card"><div class="s6-card-label">Preu</div><p>Adaptat a les necessitats de cada perruqueria — segons projecte</p></div>
+    <div class="s6-card"><div class="s6-card-label">Gestió completa</div><p>SanaConsultIA s'encarrega de tot — sense feina per a la perruqueria</p></div>
+  </div>
+  <a href="mailto:sanaconsultia@gmail.com" class="s6-cta">Parlem aquesta setmana →</a>
+</section>
+<section class="slide s7">
+  <h2 class="s7-title">Parlem</h2>
+  <p class="s7-sub">Estem preparats per transformar la seva perruqueria</p>
+  <div class="s7-grid">
+    <div class="s7-item"><div class="icon">📧</div><div class="label">Correo</div><p>sanaconsultia@gmail.com</p></div>
+    <div class="s7-item"><div class="icon">📱</div><div class="label">Telèfon</div><p>675 113 734</p></div>
+    <div class="s7-item"><div class="icon">🌐</div><div class="label">Web</div><p>sanaconsultia.es</p></div>
+  </div>
+</section>
+<script>
+  const slides=document.querySelectorAll('.slide');
+  const nav=document.getElementById('navDots');
+  slides.forEach((s,i)=>{
+    const d=document.createElement('div');
+    d.className='dot'+(i===0?' active':'');
+    d.onclick=()=>s.scrollIntoView({behavior:'smooth'});
+    nav.appendChild(d);
+  });
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        document.querySelectorAll('.dot').forEach((d,i)=>{
+          d.classList.toggle('active',slides[i]===e.target);
+        });
+      }
+    });
+  },{threshold:0.5});
+  slides.forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
