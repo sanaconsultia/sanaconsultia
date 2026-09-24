@@ -30,7 +30,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy:        #0F1C2E;
@@ -142,7 +142,7 @@
     border-bottom: 1px solid rgba(29,158,117,.18);
   }
   .nav-logo {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 1.25rem; font-weight: 700;
     color: #fff; text-decoration: none; letter-spacing: -.01em;
   }
@@ -164,7 +164,7 @@
     min-height: 100vh; align-items: flex-start;
     background: linear-gradient(155deg, var(--navy) 0%, #0d2238 55%, #0e2a1e 100%);
     display: flex; align-items: flex-start;
-    padding: 80px 5% 60px;
+    padding: 160px 5% 80px;
     position: relative; overflow: hidden;
   }
   .hero::before {
@@ -184,7 +184,7 @@
   }
 
   .hero-inner { max-width: 1200px; margin: auto; width: 100%; display: flex; gap: 5%; align-items: flex-start; position: relative; z-index: 1; }
-  .hero-text { flex: 1 1 52%; }
+  .hero-text { flex: 1 1 58%; }
 
   /* Territorio badge */
   .territory-badge {
@@ -209,9 +209,9 @@
   }
 
   .hero-title {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-    font-weight: 800; line-height: 1.1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    font-weight: 800; line-height: 1.22;
     color: #fff; margin-bottom: 1.4rem;
   }
   .hero-title .accent { color: var(--green); }
@@ -274,7 +274,7 @@
   .chat-bubble.user { background: rgba(255,255,255,.1); color: rgba(255,255,255,.75); border-radius: 12px 12px 4px 12px; text-align: right; }
   .card-footer { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; }
   .card-stat { text-align: center; }
-  .card-stat .val { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--green-light); }
+  .card-stat .val { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--green-light); }
   .card-stat .lbl { font-size: .72rem; color: rgba(255,255,255,.5); }
 
   /* ─── STATS BAR ─── */
@@ -287,7 +287,7 @@
   .stats-inner { max-width: 1000px; margin: auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem; }
   .stat-item { text-align: center; }
   .stat-num {
-    font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.2rem; font-weight: 800;
     color: var(--green-light); display: block; line-height: 1;
   }
   .stat-desc { font-size: .82rem; color: rgba(255,255,255,.55); margin-top: .3rem; }
@@ -305,7 +305,7 @@
     flex-wrap: wrap; gap: 1.5rem;
   }
   .price-banner-text h2 {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(1.4rem, 2.8vw, 2rem);
     font-weight: 800; color: #fff; line-height: 1.2;
   }
@@ -329,7 +329,7 @@
     color: var(--green); margin-bottom: .8rem;
   }
   .section-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(1.8rem, 3vw, 2.6rem);
     font-weight: 800; line-height: 1.15; color: var(--navy);
     margin-bottom: 1rem;
@@ -344,7 +344,7 @@
   .ps-grid { max-width: 1100px; margin: 3rem auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
   .ps-col { background: #fff; border-radius: 14px; padding: 2rem; border: 1px solid var(--sand); }
   .ps-col.solution { background: var(--navy); border-color: transparent; }
-  .ps-col h3 { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 1.2rem; }
+  .ps-col h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 1.2rem; }
   .ps-col.problem h3 { color: #c0392b; }
   .ps-col.solution h3 { color: var(--green-light); }
   .ps-list { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
@@ -380,10 +380,10 @@
 
   .service-icon {
     width: 52px; height: 52px; border-radius: 12px;
-    background: var(--green-pale); display: flex; align-items: flex-start; justify-content: center;
+    background: var(--green-pale); display: flex; align-items: center; justify-content: center;
     font-size: 1.6rem; margin-bottom: 1.2rem;
   }
-  .service-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: .6rem; }
+  .service-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: .6rem; }
   .service-card p  { color: var(--text-muted); font-size: .9rem; line-height: 1.6; }
 
   /* ─── PROCESO ─── */
@@ -397,11 +397,11 @@
   .step-num {
     flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%;
     background: var(--navy); color: var(--green-light);
-    font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800;
-    display: flex; align-items: flex-start; justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
     border: 2px solid var(--green); z-index: 1;
   }
-  .step-body h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .35rem; padding-top: .8rem; }
+  .step-body h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .35rem; padding-top: .8rem; }
   .step-body p { color: var(--text-muted); font-size: .9rem; line-height: 1.6; }
 
   /* ─── PRECIOS ─── */
@@ -428,8 +428,8 @@
     padding: .25rem 1rem; border-radius: 99px;
   }
   .pricing-card:hover { transform: translateY(-4px); }
-  .pricing-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: .4rem; }
-  .pricing-price { font-family: 'Syne', sans-serif; font-size: 2.4rem; font-weight: 800; color: var(--green-light); margin: .8rem 0 .3rem; }
+  .pricing-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: .4rem; }
+  .pricing-price { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.4rem; font-weight: 800; color: var(--green-light); margin: .8rem 0 .3rem; }
   .pricing-price small { font-size: 1rem; font-weight: 400; color: rgba(255,255,255,.45); }
   .pricing-desc { color: rgba(255,255,255,.5); font-size: .85rem; margin-bottom: 1.4rem; }
   .pricing-features { list-style: none; display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1.8rem; }
@@ -448,11 +448,11 @@
     background: var(--green); color: #fff;
     width: 120px; height: 120px; border-radius: 50%;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    font-family: 'Syne', sans-serif; font-weight: 800; text-align: center; line-height: 1.1;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; text-align: center; line-height: 1.1;
   }
   .kit-badge .big { font-size: 1.5rem; }
   .kit-badge .small { font-size: .72rem; opacity: .85; }
-  .kit-text h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; color: #fff; margin-bottom: .7rem; }
+  .kit-text h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; color: #fff; margin-bottom: .7rem; }
   .kit-text p { color: rgba(255,255,255,.6); line-height: 1.65; font-size: .95rem; }
   .kit-text .highlight { color: var(--green-light); font-weight: 600; }
 
@@ -482,7 +482,7 @@
     width: 100%; padding: 1rem;
     background: var(--green); color: #fff;
     border: none; border-radius: 8px;
-    font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; font-weight: 700;
     cursor: pointer; transition: background .2s, transform .15s;
   }
   .form-submit:hover { background: var(--green-hover); transform: translateY(-1px); }
@@ -494,10 +494,10 @@
     border-top: 1px solid rgba(29,158,117,.2);
   }
   .footer-inner { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
-  .footer-logo { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; }
+  .footer-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; }
   .footer-logo span { color: var(--green); }
   .footer-tagline { color: rgba(255,255,255,.38); font-size: .82rem; margin-top: .3rem; }
-  .footer-contact h4 { font-family: 'Syne', sans-serif; font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .07em; margin-bottom: .8rem; }
+  .footer-contact h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .07em; margin-bottom: .8rem; }
   .footer-contact a { display: block; color: rgba(255,255,255,.65); text-decoration: none; font-size: .9rem; margin-bottom: .4rem; transition: color .2s; }
   .footer-contact a:hover { color: var(--green-light); }
   .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
@@ -757,7 +757,7 @@
       <!-- Agente WhatsApp — NUEVO -->
       <div class="service-card reveal">
         <span class="badge-new">Disponible</span>
-        <div class="service-icon">💬</div>
+        <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--green)" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
         <h3><span data-es="Agente IA en WhatsApp" data-ca="Agent IA al WhatsApp">Agent IA al WhatsApp</span></h3>
         <p><span data-es="Conecta un agente de inteligencia artificial al WhatsApp de tu empresa. Responde mensajes, atiende clientes, envía información y gestiona solicitudes de forma automática y completamente personalizada para tu negocio." data-ca="Connecta un agent d'intel·ligència artificial al WhatsApp de la teva empresa. Respon missatges, atén clients, envia informació i gestiona sol·licituds de forma automàtica i completament personalitzada per al teu negoci.">Connecta un agent d'intel·ligència artificial al WhatsApp de la teva empresa. Respon missatges, atén clients, envia informació i gestiona sol·licituds de forma automàtica i completament personalitzada per al teu negoci.</span></p>
       </div>
