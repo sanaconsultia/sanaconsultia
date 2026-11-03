@@ -62,12 +62,12 @@
   /* ─── SECTOR SELECTOR ─── */
   .sector-selector {
     flex: 1 1 40%;
-    background: rgba(255,255,255,.06);
+    background: rgba(15,28,46,.18);
     border: 1px solid rgba(255,255,255,.12);
     border-radius: 16px;
     padding: 1.8rem;
     width: 100%; max-width: 420px;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(2px);
   }
   .sector-selector-label {
     font-size: .75rem; font-weight: 700; text-transform: uppercase;
@@ -582,6 +582,10 @@
     border-color: rgba(255,255,255,.18);
     background: linear-gradient(155deg, rgba(255,255,255,.1), rgba(255,255,255,.045));
     box-shadow: 0 24px 70px rgba(0,0,0,.2);
+  }
+  .sector-selector {
+    background: rgba(15,28,46,.18);
+    backdrop-filter: blur(2px);
   }
   .service-card { border-color: rgba(15,28,46,.07); box-shadow: 0 10px 30px rgba(15,28,46,.045); }
   .service-card::before { background: linear-gradient(90deg, var(--green), var(--accent)); }
