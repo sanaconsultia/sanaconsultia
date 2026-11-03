@@ -162,10 +162,10 @@
 
   /* ─── HERO ─── */
   .hero {
-    min-height: 100vh; align-items: flex-start;
+    min-height: 100vh; align-items: stretch; flex-direction: column;
     background: linear-gradient(155deg, var(--navy) 0%, #0d2238 55%, #0e2a1e 100%);
-    display: flex; align-items: flex-start;
-    padding: 160px 5% 80px;
+    display: flex;
+    padding: 82px 5% 48px;
     position: relative; overflow: hidden;
   }
   .hero::before {
@@ -184,8 +184,8 @@
     pointer-events: none;
   }
 
-  .hero-inner { max-width: 1200px; margin: auto; width: 100%; display: flex; gap: 5%; align-items: flex-start; position: relative; z-index: 1; }
-  .hero-text { flex: 1 1 58%; }
+  .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: flex; gap: 5%; align-items: flex-start; position: relative; z-index: 1; }
+  .hero-text { flex: 1 1 58%; min-width: 0; }
 
   /* Territorio badge */
   .territory-badge {
@@ -220,13 +220,14 @@
   .hero-network {
     position: relative;
     z-index: 0;
-    width: 100%;
-    height: 220px;
-    flex: 0 0 220px;
+    width: calc(100% + 10vw);
+    height: clamp(150px, 17vw, 220px);
+    flex: 0 0 auto;
+    margin: 0 0 12px -5vw;
     pointer-events: none;
     background:
-      radial-gradient(ellipse at 50% 50%, rgba(95,209,168,.14), transparent 62%),
-      radial-gradient(ellipse at 72% 54%, rgba(232,163,61,.1), transparent 68%);
+      radial-gradient(ellipse at 50% 50%, rgba(95,209,168,.18), transparent 62%),
+      radial-gradient(ellipse at 72% 54%, rgba(232,163,61,.13), transparent 68%);
   }
   .hero-network canvas { display: block; width: 100%; height: 100%; pointer-events: none; }
   .hero-network.is-fallback { background:
@@ -270,7 +271,7 @@
   .btn-outline:hover { border-color: var(--green-light); color: var(--green-light); }
 
   /* Hero card */
-  .hero-card-wrap { flex: 1 1 40%; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; gap: .75rem; padding-top: 0.5rem; }
+  .hero-card-wrap { flex: 1 1 40%; display: flex; justify-content: flex-end; align-items: flex-start; padding-top: 0.5rem; }
   .hero-card {
     background: rgba(255,255,255,.06);
     border: 1px solid rgba(255,255,255,.12);
@@ -664,7 +665,7 @@
     .lang-switcher { margin: 0; gap: 3px; flex-shrink: 0; }
     .lang-btn { font-size: .7rem; padding: 4px 6px; }
     nav > .btn-cta { display: none; }
-    .hero { padding: 112px 5% 58px; }
+    .hero { padding: 82px 5% 40px; }
     .hero-title { font-size: clamp(1.8rem, 8vw, 2.45rem); overflow-wrap: anywhere; }
     .hero-desc { font-size: 1rem; }
     .hero-buttons { align-items: stretch; }
@@ -685,11 +686,11 @@
     .territory-strip > p:nth-child(2), .territory-strip > p:nth-child(4) { display: none; }
   }
   @media (max-width: 900px) {
-    .hero-network { width: min(100%, 520px); height: 180px; flex-basis: 180px; }
+    .hero-network { width: calc(100% + 10vw); height: 145px; }
     .social-detail-grid, .about-grid { grid-template-columns: 1fr; }
     .social-service-card { align-items: flex-start; }
-    .hero-card-wrap { display: flex; width: 100%; align-items: center; }
-    .sector-selector { max-width: 520px; background: #152c3d; backdrop-filter: none; }
+    .hero-card-wrap { display: flex; width: 100%; justify-content: flex-start; }
+    .sector-selector { max-width: 100%; background: #152c3d; backdrop-filter: none; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -724,6 +725,7 @@
 
 <!-- ─── HERO ─── -->
 <section class="hero">
+  <div class="hero-network" id="hero-network" aria-hidden="true"><canvas></canvas></div>
   <div class="hero-inner">
     <div class="hero-text">
       <div class="territory-badge">
@@ -746,7 +748,6 @@
     </div>
 
     <div class="hero-card-wrap">
-      <div class="hero-network" id="hero-network" aria-hidden="true"><canvas></canvas></div>
       <div class="sector-selector">
         <div class="sector-selector-label"><span data-es="¿Cuál es tu sector?" data-ca="Quin és el teu sector?">Quin és el teu sector?</span></div>
         <div class="sector-buttons">

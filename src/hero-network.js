@@ -109,7 +109,7 @@ if (root && canvas) {
       const isMobile = mobileQuery.matches;
       const nodeCount = isMobile ? 46 : 96;
       const pulseCount = isMobile ? 14 : 30;
-      const radius = 1.65;
+      const radius = 1.9;
 
       nodePositions = Array.from({ length: nodeCount }, () => {
         const z = Math.random() * 2 - 1;
@@ -244,6 +244,7 @@ if (root && canvas) {
       renderer.setSize(width, height, false);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
+      network.scale.x = Math.min(camera.aspect * 0.7, 4);
 
       if (previousMobileState !== mobileQuery.matches) {
         previousMobileState = mobileQuery.matches;
