@@ -56,6 +56,7 @@ body{font-family:'Inter',sans-serif;}
 .c-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px;}
 .c-item p{font-size:16px;color:rgba(255,255,255,0.85);}
 </style>
+<link rel="stylesheet" href="../css/cookie-consent.css">
 </head>
 <body>
 <nav class="nav" id="navDots"></nav>
@@ -153,5 +154,6 @@ slides.forEach((s,i)=>{const d=document.createElement('div');d.className='dot'+(
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.dot').forEach((d,i)=>{d.classList.toggle('active',slides[i]===e.target);});}});},{threshold:0.5});
 slides.forEach(s=>obs.observe(s));
 </script>
+<script src="../js/cookie-consent.js"></script>
 </body>
 </html>

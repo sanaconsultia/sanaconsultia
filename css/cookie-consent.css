@@ -1,0 +1,70 @@
+.cookie-consent {
+  position: fixed;
+  z-index: 1000;
+  inset: auto 1rem 1rem;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  color: #1a1a18;
+  background: #fff;
+  border: 1px solid #d8d6cf;
+  border-radius: 14px;
+  box-shadow: 0 16px 55px rgba(0, 0, 0, .28);
+  font: 400 15px/1.5 "DM Sans", Arial, sans-serif;
+}
+.cookie-consent[hidden],
+.cookie-consent [hidden] { display: none !important; }
+.cookie-consent h2,
+.cookie-consent h3 { margin: 0 0 .45rem; color: #0f1c2e; font: 700 1.05rem/1.3 "Plus Jakarta Sans", Arial, sans-serif; }
+.cookie-consent p { margin: 0 0 .8rem; }
+.cookie-consent a { color: #126d52; font-weight: 600; text-decoration: underline; }
+.cookie-consent__links { display: flex; flex-wrap: wrap; gap: .35rem 1rem; }
+.cookie-consent__actions { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: .9rem; }
+.cookie-consent button {
+  min-height: 42px;
+  padding: .55rem 1rem;
+  border: 1px solid #0f1c2e;
+  border-radius: 7px;
+  color: #0f1c2e;
+  background: #fff;
+  font: 700 .9rem "DM Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+.cookie-consent button:focus-visible,
+.cookie-consent a:focus-visible { outline: 3px solid #1d9e75; outline-offset: 3px; }
+.cookie-consent button.cookie-consent__primary,
+.cookie-consent button.cookie-consent__secondary {
+  color: #fff;
+  border-color: #0f1c2e;
+  background: #0f1c2e;
+}
+.cookie-consent button.cookie-consent__primary,
+.cookie-consent button.cookie-consent__secondary { flex: 1 1 130px; }
+.cookie-consent button.cookie-consent__tertiary { border-color: transparent; padding-left: .5rem; color: #126d52; text-decoration: underline; }
+.cookie-consent__settings { border-top: 1px solid #e4e2dc; margin-top: 1rem; padding-top: 1rem; }
+.cookie-consent__category { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; padding: .7rem 0; border-bottom: 1px solid #eeece7; }
+.cookie-consent__category p { margin: .2rem 0 0; color: #555; font-size: .88rem; }
+.cookie-consent__category input { width: 1.15rem; height: 1.15rem; margin: .15rem 0 0; accent-color: #1d9e75; flex: 0 0 auto; }
+.cookie-consent__category input:disabled { opacity: .8; }
+.cookie-consent__manage {
+  position: fixed;
+  z-index: 999;
+  right: 1rem;
+  bottom: 1rem;
+  min-height: 40px;
+  padding: .5rem .85rem;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 7px;
+  color: #fff;
+  background: #0f1c2e;
+  font: 600 .85rem "DM Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+.cookie-consent:not([hidden]) ~ .cookie-consent__manage { display: none; }
+@media (max-width: 560px) {
+  .cookie-consent { inset: auto .55rem .55rem; padding: 1rem; max-height: min(82vh, 680px); overflow-y: auto; }
+  .cookie-consent__actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .cookie-consent button.cookie-consent__primary,
+  .cookie-consent button.cookie-consent__secondary { width: 100%; }
+  .cookie-consent button.cookie-consent__tertiary { grid-column: 1 / -1; }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "sanaconsultia-web",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/hero-network.js --bundle --minify --outfile=js/hero-network.bundle.js"
+  },
+  "dependencies": {
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

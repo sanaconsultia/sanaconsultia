@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SanaConsultIA | Automatización con IA para pymes · Mejores precios de España</title>
-<meta name="description" content="Automatizaciones con IA completamente a medida para tu pyme. Chatbot, agente IA en WhatsApp, automatización de procesos. Desde 350€. Primera empresa de IA del Montseny.">
-<meta name="keywords" content="automatización IA pymes, chatbot empresa, agente IA WhatsApp, automatización procesos, IA Montseny, chatbot inmobiliaria, automatizar citas fisioterapia, chatbot clínica dental">
-<meta property="og:title" content="SanaConsultIA | Automatización con IA para pymes">
-<meta property="og:description" content="Automatizaciones con IA a medida para tu pyme. Desde 350€. Primera empresa de IA del Montseny.">
+<title>SanaConsultIA | Automatizo la atención al cliente y las redes de tu negocio local</title>
+<meta name="description" content="Soy Jordi. Ayudo a negocios locales a captar y atender clientes con IA, y a tener un Instagram constante.">
+<meta name="keywords" content="automatización IA negocios locales, chatbot empresa, agente IA WhatsApp, automatización procesos, gestión Instagram, chatbot inmobiliaria, automatizar citas fisioterapia">
+<meta property="og:title" content="SanaConsultIA | Automatizo la atención al cliente y las redes de tu negocio local">
+<meta property="og:description" content="Soy Jordi. Ayudo a negocios locales a captar y atender clientes con IA, y a tener un Instagram constante.">
 <meta property="og:url" content="https://sanaconsultia.es">
 <link rel="canonical" href="https://sanaconsultia.es">
 <script type="application/ld+json">
@@ -15,7 +15,7 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "SanaConsultIA",
-  "description": "Automatizaciones con IA a medida para pymes: chatbots, agentes de IA en WhatsApp y automatización de procesos.",
+  "description": "Automatizo la atención al cliente y las redes de negocios locales con inteligencia artificial.",
   "url": "https://sanaconsultia.es",
   "telephone": "+34675113734",
   "priceRange": "Desde 350€",
@@ -31,6 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/cookie-consent.css">
 <style>
   :root {
     --navy:        #0F1C2E;
@@ -215,6 +216,25 @@
     color: #fff; margin-bottom: 1.4rem;
   }
   .hero-title .accent { color: var(--green); }
+  .hero-title, .hero-desc { text-shadow: 0 2px 12px rgba(0,0,0,.42); }
+  .hero-network {
+  position: absolute;
+  z-index: 0;
+  top: 10%;
+  right: 0;
+  width: 58%;
+  height: 78%;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 68% 48%, rgba(95,209,168,.14), transparent 58%),
+    radial-gradient(ellipse at 78% 55%, rgba(232,163,61,.1), transparent 65%);
+  }
+  .hero-network canvas { display: block; width: 100%; height: 100%; pointer-events: none; }
+  .hero-network.is-fallback { background:
+  radial-gradient(ellipse at 68% 48%, rgba(95,209,168,.24), transparent 56%),
+  radial-gradient(ellipse at 78% 55%, rgba(232,163,61,.18), transparent 65%),
+  linear-gradient(135deg, #0F1C2E 0%, #112b3b 58%, #103b36 100%);
+  }
 
   /* PRECIO BADGE inline en hero */
   .price-claim {
@@ -437,27 +457,6 @@
   .pricing-features li { display: flex; gap: .6rem; align-items: flex-start; font-size: .88rem; color: rgba(255,255,255,.75); }
   .pricing-features li .chk { color: var(--green); font-weight: 700; flex-shrink: 0; }
 
-  /* ─── KIT DIGITAL ─── */
-  .kit-section {
-    background: linear-gradient(135deg, var(--navy-mid) 0%, #0b2218 100%);
-    border-top: 2px solid rgba(29,158,117,.3);
-    border-bottom: 2px solid rgba(29,158,117,.3);
-  }
-  .kit-inner { max-width: 960px; margin: auto; display: flex; gap: 3rem; align-items: center; flex-wrap: wrap; }
-  .kit-badge {
-    flex-shrink: 0;
-    background: var(--green); color: #fff;
-    width: 140px; height: 140px; border-radius: 50%;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; text-align: center; line-height: 1.15;
-    padding: 0 .5rem;
-  }
-  .kit-badge .big { font-size: 1.1rem; }
-  .kit-badge .small { font-size: .68rem; opacity: .85; }
-  .kit-text h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; color: #fff; margin-bottom: .7rem; }
-  .kit-text p { color: rgba(255,255,255,.6); line-height: 1.65; font-size: .95rem; }
-  .kit-text .highlight { color: var(--green-light); font-weight: 600; }
-
   /* ─── FORMULARIO ─── */
   .contact-section { background: var(--cream); }
   .contact-inner { max-width: 680px; margin: 3rem auto 0; }
@@ -505,6 +504,18 @@
   .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
   .footer-bottom p { color: rgba(255,255,255,.5); font-size: .8rem; }
   .footer-bottom .green { color: var(--green); }
+  .footer-legal-links { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+  .footer-legal-links a, .footer-legal-links button {
+    padding: 0;
+    border: 0;
+    color: rgba(255,255,255,.7);
+    background: transparent;
+    font: inherit;
+    font-size: .8rem;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .footer-legal-links a:hover, .footer-legal-links button:hover { color: var(--green-light); }
 
   /* ─── TERRITORIO STRIP ─── */
   .territory-strip {
@@ -524,7 +535,6 @@
     .pricing-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
     .form-row { grid-template-columns: 1fr; }
-    .kit-badge { display: none; }
   }
 
   .whatsapp-float {
@@ -577,6 +587,66 @@
   .service-card::before { background: linear-gradient(90deg, var(--green), var(--accent)); }
   .service-card:hover { box-shadow: 0 18px 42px rgba(15,28,46,.12); }
   .service-icon { background: linear-gradient(145deg, var(--green-pale), var(--accent-pale)); }
+  .service-group-title {
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+    color: var(--navy);
+    font: 800 clamp(1.25rem, 2.2vw, 1.7rem)/1.2 'Plus Jakarta Sans', sans-serif;
+  }
+  .social-service-card {
+    max-width: 1200px;
+    margin: 1rem auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: #fff;
+    border: 1px solid rgba(15,28,46,.08);
+    border-radius: 14px;
+    padding: 1.35rem 1.6rem;
+    color: var(--navy);
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(15,28,46,.045);
+  }
+  .social-service-card strong { display: block; margin-bottom: .25rem; }
+  .social-service-card span { color: var(--text-muted); font-size: .92rem; }
+  .social-service-card .service-icon { flex: 0 0 auto; margin: 0; }
+  .new-section { background: #fff; }
+  .new-section-inner { max-width: 1100px; margin: auto; }
+  .social-intro {
+    margin: 1.5rem 0 2rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--green-pale);
+    border-left: 4px solid var(--green);
+    border-radius: 0 12px 12px 0;
+    color: var(--navy);
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .social-detail-grid, .about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+  .social-detail, .about-card {
+    padding: 1.35rem;
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    background: var(--cream);
+  }
+  .social-detail h3, .about-card h3 {
+    margin-bottom: .45rem;
+    color: var(--navy);
+    font: 700 1rem/1.35 'Plus Jakarta Sans', sans-serif;
+  }
+  .social-detail p, .about-card p { color: var(--text-muted); line-height: 1.65; }
+  .social-price {
+    margin-top: 1.5rem;
+    color: var(--navy);
+    font: 800 clamp(1.5rem, 3vw, 2rem)/1.2 'Plus Jakarta Sans', sans-serif;
+  }
+  .social-note { margin-top: .6rem; color: var(--text-muted); font-size: .9rem; line-height: 1.6; }
+  .about-section { background: var(--sand); }
   .section-label { color: var(--accent-dark); }
   .btn-cta { background: var(--accent); color: #172334; }
   .btn-cta:hover { background: #FFB76F; }
@@ -616,6 +686,13 @@
     .territory-strip { gap: .65rem 1rem; text-align: center; }
     .territory-strip > p:nth-child(2), .territory-strip > p:nth-child(4) { display: none; }
   }
+  @media (max-width: 900px) {
+    .hero-network { top: 7%; right: 0; width: 100%; height: 65%; opacity: .76; }
+    .social-detail-grid, .about-grid { grid-template-columns: 1fr; }
+    .social-service-card { align-items: flex-start; }
+    .hero-card-wrap { display: flex; width: 100%; justify-content: flex-start; }
+    .sector-selector { max-width: 520px; }
+  }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -638,7 +715,7 @@
     <li><a href="#servicios"><span data-es="Servicios" data-ca="Serveis">Serveis</span></a></li>
     <li><a href="#proceso"><span data-es="Cómo funciona" data-ca="Com funciona">Com funciona</span></a></li>
     <li><a href="#precios"><span data-es="Precios" data-ca="Preus">Preus</span></a></li>
-    <li><a href="#kit-digital"><span data-es="Kit Digital" data-ca="Kit Digital">Kit Digital</span></a></li>
+    <li><a href="#redes-sociales"><span data-es="Redes sociales" data-ca="Xarxes socials">Xarxes socials</span></a></li>
   </ul>
   <div class="lang-switcher">
     <button class="lang-btn active" onclick="setLang('ca')">CA</button>
@@ -649,25 +726,20 @@
 
 <!-- ─── HERO ─── -->
 <section class="hero">
+  <div class="hero-network" id="hero-network" aria-hidden="true"><canvas></canvas></div>
   <div class="hero-inner">
     <div class="hero-text">
-
       <div class="territory-badge">
         <span class="dot"></span>
-        <span data-es="Primera empresa de IA del Montseny" data-ca="Primera empresa d'IA del Montseny">Primera empresa d'IA del Montseny</span>
+        <span data-es="IA para negocios locales" data-ca="IA per a negocis locals">IA per a negocis locals</span>
       </div>
 
       <h1 class="hero-title">
-        <span data-es="Automatizamos tu pyme" data-ca="Automatitzem la teva pyme">Automatitzem la teva pyme</span><br><span data-es="con" data-ca="amb">amb</span> <span class="accent"><span data-es="Inteligencia Artificial" data-ca="Intel·ligència Artificial">Intel·ligència Artificial</span></span>
+        <span data-es="Automatizo la atención al cliente y las redes de tu negocio local" data-ca="Automatizo l’atenció al client i les xarxes del teu negoci local">Automatizo l’atenció al client i les xarxes del teu negoci local</span>
       </h1>
 
-      <div class="price-claim">
-        <span class="tag-icon">🏷️</span>
-        <span><strong><span data-es="Los mejores precios del mercado nacional" data-ca="Els millors preus del mercat nacional">Els millors preus del mercat nacional</span></strong> — <span data-es="sin renunciar a la calidad ni a la atención personalizada" data-ca="sense renunciar a la qualitat ni a l'atenció personalitzada">sense renunciar a la qualitat ni a l'atenció personalitzada</span></span>
-      </div>
-
       <p class="hero-desc">
-        <span data-es="Soy Jordi, de SanaConsultIA. Ayudo a pequeñas empresas a captar y atender clientes y a quitarse de encima tareas repetitivas con soluciones de inteligencia artificial hechas a medida." data-ca="Soc en Jordi, de SanaConsultIA. Ajudo petites empreses a captar i atendre clients i a treure's de sobre tasques repetitives amb solucions d'intel·ligència artificial fetes a mida.">Soc en Jordi, de SanaConsultIA. Ajudo petites empreses a captar i atendre clients i a treure's de sobre tasques repetitives amb solucions d'intel·ligència artificial fetes a mida.</span>
+        <span data-es="Soy Jordi. Ayudo a negocios locales a captar y atender clientes con IA, y a tener un Instagram constante." data-ca="Soc en Jordi. Ajudo els negocis locals a captar i atendre clients amb IA i a mantenir Instagram actiu.">Soc en Jordi. Ajudo els negocis locals a captar i atendre clients amb IA i a mantenir Instagram actiu.</span>
       </p>
 
       <div class="hero-buttons">
@@ -750,7 +822,7 @@
   <div class="stats-inner">
     <div class="stat-item reveal">
       <span class="stat-num"><span data-es="menos de 15 días" data-ca="menys de 15 dies">menys de 15 dies</span></span>
-      <div class="stat-desc"><span data-es="de entrega garantizada" data-ca="d'entrega garantida">d'entrega garantida</span></div>
+      <div class="stat-desc"><span data-es="plazo previsto de entrega" data-ca="termini previst de lliurament">termini previst de lliurament</span></div>
     </div>
     <div class="stat-item reveal">
       <span class="stat-num">desde 350€</span>
@@ -758,7 +830,7 @@
     </div>
     <div class="stat-item reveal">
       <span class="stat-num"><span data-es="30 días" data-ca="30 dies">30 dies</span></span>
-      <div class="stat-desc"><span data-es="garantía de satisfacción" data-ca="garantia de satisfacció">garantia de satisfacció</span></div>
+      <div class="stat-desc"><span data-es="acompañamiento inicial" data-ca="acompanyament inicial">acompanyament inicial</span></div>
     </div>
     <div class="stat-item reveal">
       <span class="stat-num">100%</span>
@@ -771,11 +843,11 @@
 <div class="price-banner reveal">
   <div class="price-banner-inner">
     <div class="price-banner-text">
-      <h2>Els <span class="green"><span data-es="mejores precios de España" data-ca="millors preus d'Espanya">millors preus d'Espanya</span></span><br><span data-es="en automatización con IA para pymes" data-ca="en automatització amb IA per a pimes">en automatització amb IA per a pimes</span></h2>
+      <h2><span data-es="Automatización con IA" data-ca="Automatització amb IA">Automatització amb IA</span><br><span data-es="para tu negocio local" data-ca="per al teu negoci local">per al teu negoci local</span></h2>
       <p><span data-es="Implementación profesional, soporte real y resultados medibles — sin letra pequeña." data-ca="Implementació professional, suport real i resultats mesurables — sense lletra petita.">Implementació professional, suport real i resultats mesurables — sense lletra petita.</span></p>
     </div>
     <div class="price-pillars">
-      <div class="pillar"><span class="ico">💰</span><span data-es="Precio imbatible" data-ca="Preu imbatible">Preu imbatible</span></div>
+      <div class="pillar"><span class="ico">💰</span><span data-es="Precios claros" data-ca="Preus clars">Preus clars</span></div>
       <div class="pillar"><span class="ico">🎯</span><span data-es="A medida de tu negocio" data-ca="A mida del teu negoci">A mida del teu negoci</span></div>
       <div class="pillar"><span class="ico">🤝</span><span data-es="Atención personalizada" data-ca="Atenció personalitzada">Atenció personalitzada</span></div>
       <div class="pillar"><span class="ico">🏅</span><span data-es="Calidad profesional" data-ca="Qualitat professional">Qualitat professional</span></div>
@@ -804,9 +876,9 @@
         <h3><span data-es="✅ Lo que SanaConsultIA te da" data-ca="✅ El que SanaConsultIA et dona">✅ El que SanaConsultIA et dona</span></h3>
         <ul class="ps-list">
           <li><span class="ico">🤖</span><span data-es="Automatizaciones personalizadas, diseñadas solo para ti" data-ca="Automatitzacions personalitzades, dissenyades només per a tu">Automatitzacions personalitzades, dissenyades només per a tu</span></li>
-          <li><span class="ico">💚</span><span data-es="Los mejores precios del mercado nacional, garantizados" data-ca="Els millors preus del mercat nacional, garantits">Els millors preus del mercat nacional, garantits</span></li>
+          <li><span class="ico">💚</span><span data-es="Precios claros y soluciones adaptadas a cada negocio" data-ca="Preus clars i solucions adaptades a cada negoci">Preus clars i solucions adaptades a cada negoci</span></li>
           <li><span class="ico">🌙</span><span data-es="Agente IA disponible 24/7 en web, WhatsApp o email" data-ca="Agent IA disponible 24/7 a web, WhatsApp o email">Agent IA disponible 24/7 a web, WhatsApp o email</span></li>
-          <li><span class="ico">⚡</span><span data-es="Entrega en menos de 15 días, sin complicaciones técnicas" data-ca="Entrega en menys de 15 dies, sense complicacions tècniques">Entrega en menys de 15 dies, sense complicacions tècniques</span></li>
+          <li><span class="ico">⚡</span><span data-es="Plan de trabajo claro, sin complicaciones técnicas" data-ca="Pla de treball clar, sense complicacions tècniques">Pla de treball clar, sense complicacions tècniques</span></li>
           <li><span class="ico">📍</span><span data-es="Trato directo con Jordi, desde el Montseny para toda España" data-ca="Tracte directe amb en Jordi, des del Montseny per a tota Espanya">Tracte directe amb en Jordi, des del Montseny per a tota Espanya</span></li>
         </ul>
       </div>
@@ -823,7 +895,8 @@
       <p class="section-sub"><span data-es="Cada proyecto es único. Analizamos tu negocio y diseñamos la solución exacta que necesitas — sin plantillas genéricas." data-ca="Cada projecte és únic. Analitzem el teu negoci i dissenyem la solució exacta que necessites — sense plantilles genèriques.">Cada projecte és únic. Analitzem el teu negoci i dissenyem la solució exacta que necessites — sense plantilles genèriques.</span></p>
     </div>
 
-    <div class="services-grid" style="margin-top:3rem;">
+    <h3 class="service-group-title"><span data-es="Automatización con IA" data-ca="Automatització amb IA">Automatització amb IA</span></h3>
+    <div class="services-grid" style="margin-top:1.2rem;">
 
       <!-- Chatbot captación -->
       <div class="service-card reveal">
@@ -848,6 +921,66 @@
         <p><span data-es="Elimina tareas manuales repetitivas: gestión de emails, actualización de datos, envío de presupuestos, seguimiento de clientes. Tu equipo se centra en lo que realmente importa." data-ca="Elimina tasques manuals repetitives: gestió d'emails, actualització de dades, enviament de pressupostos, seguiment de clients. El teu equip es centra en el que realment importa.">Elimina tasques manuals repetitives: gestió d'emails, actualització de dades, enviament de pressupostos, seguiment de clients. El teu equip es centra en el que realment importa.</span></p>
       </div>
 
+      <div class="service-card reveal">
+        <div class="service-icon">🧭</div>
+        <h3><span data-es="Consultoría IA" data-ca="Consultoria d’IA">Consultoria d’IA</span></h3>
+        <p><span data-es="Analizo tu negocio y te ayudo a identificar dónde la inteligencia artificial puede ser útil, con una propuesta ajustada a tus necesidades." data-ca="Analitzo el teu negoci i t’ajudo a detectar on pot ser útil la intel·ligència artificial, amb una proposta adaptada a les teves necessitats.">Analitzo el teu negoci i t’ajudo a detectar on pot ser útil la intel·ligència artificial, amb una proposta adaptada a les teves necessitats.</span></p>
+      </div>
+    </div>
+
+    <h3 class="service-group-title"><span data-es="Redes sociales" data-ca="Xarxes socials">Xarxes socials</span></h3>
+    <a class="social-service-card reveal" href="#redes-sociales">
+      <span><strong><span data-es="Gestión de redes sociales" data-ca="Gestió de xarxes socials">Gestió de xarxes socials</span></strong><span data-es="Publicaciones constantes en Instagram y seguimiento mensual de los leads recibidos." data-ca="Publicacions constants a Instagram i seguiment mensual dels contactes rebuts.">Publicacions constants a Instagram i seguiment mensual dels contactes rebuts.</span></span>
+      <span class="service-icon" aria-hidden="true">📲</span>
+    </a>
+  </div>
+</section>
+
+<section class="new-section" id="redes-sociales">
+  <div class="new-section-inner">
+    <div class="section-label"><span data-es="Redes sociales" data-ca="Xarxes socials">Xarxes socials</span></div>
+    <h2 class="section-title"><span data-es="Gestión de publicaciones en Instagram constante que trae más leads a tu CRM, sin que tengas que dedicarle tiempo" data-ca="Publicacions constants a Instagram que porten més contactes al teu CRM, sense que hi hagis de dedicar temps">Publicacions constants a Instagram que porten més contactes al teu CRM, sense que hi hagis de dedicar temps</span></h2>
+    <p class="social-intro"><span data-es="Sé que tengo que publicar, pero siempre me queda pendiente." data-ca="Sé que hauria de publicar, però sempre ho deixo pendent.">Sé que hauria de publicar, però sempre ho deixo pendent.</span></p>
+    <div class="social-detail-grid">
+      <article class="social-detail">
+        <h3><span data-es="Calendario mensual" data-ca="Calendari mensual">Calendari mensual</span></h3>
+        <p><span data-es="Planificación de contenidos para publicaciones y stories, pensada para tu negocio." data-ca="Planificació de continguts per a publicacions i stories, pensada per al teu negoci.">Planificació de continguts per a publicacions i stories, pensada per al teu negoci.</span></p>
+      </article>
+      <article class="social-detail">
+        <h3><span data-es="Publicación y conversación" data-ca="Publicació i conversa">Publicació i conversa</span></h3>
+        <p><span data-es="Publicamos los contenidos y respondemos a los comentarios de tus publicaciones." data-ca="Publiquem els continguts i responem els comentaris de les teves publicacions.">Publiquem els continguts i responem els comentaris de les teves publicacions.</span></p>
+      </article>
+      <article class="social-detail">
+        <h3><span data-es="Informe mensual" data-ca="Informe mensual">Informe mensual</span></h3>
+        <p><span data-es="Recibirás un informe con lo publicado y los leads recibidos. Medimos la evolución frente al punto de partida definido en el diagnóstico, sin prometer cifras de ventas ni un número fijo de leads." data-ca="Rebràs un informe amb el contingut publicat i els contactes rebuts. En mesurem l’evolució respecte del punt de partida del diagnòstic, sense prometre vendes ni una quantitat fixa de contactes.">Rebràs un informe amb el contingut publicat i els contactes rebuts. En mesurem l’evolució respecte del punt de partida del diagnòstic, sense prometre vendes ni una quantitat fixa de contactes.</span></p>
+      </article>
+      <article class="social-detail">
+        <h3><span data-es="Campañas opcionales" data-ca="Campanyes opcionals">Campanyes opcionals</span></h3>
+        <p><span data-es="Si te interesa, también podemos gestionar campañas de Meta Ads. La inversión publicitaria se paga aparte, directamente a Meta." data-ca="Si t’interessa, també podem gestionar campanyes de Meta Ads. La inversió publicitària es paga a part, directament a Meta.">Si t’interessa, també podem gestionar campanyes de Meta Ads. La inversió publicitària es paga a part, directament a Meta.</span></p>
+      </article>
+    </div>
+    <p class="social-price"><span data-es="Desde 295 €/mes" data-ca="Des de 295 €/mes">Des de 295 €/mes</span></p>
+    <p class="social-note"><span data-es="En un plazo de 15 días desde la aceptación recibirás el primer bloque de publicaciones junto con el informe." data-ca="En un termini de 15 dies des de l’acceptació rebràs el primer bloc de publicacions amb l’informe.">En un termini de 15 dies des de l’acceptació rebràs el primer bloc de publicacions amb l’informe.</span></p>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="new-section-inner">
+    <div class="section-label"><span data-es="Quién soy" data-ca="Qui soc">Qui soc</span></div>
+    <h2 class="section-title"><span data-es="Primero entiendo tu negocio. Después, actúo." data-ca="Primer entenc el teu negoci. Després, actuo.">Primer entenc el teu negoci. Després, actuo.</span></h2>
+    <div class="about-grid">
+      <article class="about-card">
+        <h3><span data-es="Experiencia" data-ca="Experiència">Experiència</span></h3>
+        <p><span data-es="Más de 30 años en ventas y gestión inmobiliaria en Cataluña." data-ca="Més de 30 anys d’experiència en vendes i gestió immobiliària a Catalunya.">Més de 30 anys d’experiència en vendes i gestió immobiliària a Catalunya.</span></p>
+      </article>
+      <article class="about-card">
+        <h3><span data-es="Formación" data-ca="Formació">Formació</span></h3>
+        <p><span data-es="En la UOC, con un curso sobre el mundo digital en entornos rurales, y en automatizaciones y ciberseguridad con Divisual Project." data-ca="A la UOC, amb un curs sobre el món digital en entorns rurals, i en automatitzacions i ciberseguretat amb Divisual Project.">A la UOC, amb un curs sobre el món digital en entorns rurals, i en automatitzacions i ciberseguretat amb Divisual Project.</span></p>
+      </article>
+      <article class="about-card">
+        <h3><span data-es="Mi forma de trabajar" data-ca="La meva manera de treballar">La meva manera de treballar</span></h3>
+        <p><span data-es="Primero analizo cómo funciona tu negocio y qué necesitas. Después propongo y pongo en marcha lo que tiene sentido para ti." data-ca="Primer analitzo com funciona el teu negoci i què necessites. Després et proposo i implemento allò que té sentit per a tu.">Primer analitzo com funciona el teu negoci i què necessites. Després et proposo i implemento allò que té sentit per a tu.</span></p>
+      </article>
     </div>
   </div>
 </section>
@@ -934,7 +1067,7 @@
     <div class="centered reveal">
       <div class="section-label"><span data-es="Precios" data-ca="Preus">Preus</span></div>
       <h2 class="section-title"><span data-es="Transparentes, accesibles" data-ca="Transparents, accessibles">Transparents, accessibles</span><br><span data-es="y" data-ca="i">i</span> <span class="accent"><span data-es="sin sorpresas" data-ca="sense sorpreses">sense sorpreses</span></span></h2>
-      <p class="section-sub" style="color:rgba(255,255,255,.55)"><span data-es="Los mejores precios del mercado nacional en IA para pymes. Cada proyecto es único — estos son los precios base." data-ca="Els millors preus del mercat nacional en IA per a pimes. Cada projecte és únic — aquests són els preus base.">Els millors preus del mercat nacional en IA per a pimes. Cada projecte és únic — aquests són els preus base.</span></p>
+      <p class="section-sub" style="color:rgba(255,255,255,.55)"><span data-es="Cada proyecto es distinto. Estos precios son una referencia inicial y se ajustan a las necesidades de tu negocio." data-ca="Cada projecte és diferent. Aquests preus són una referència inicial i s’ajusten a les necessitats del teu negoci.">Cada projecte és diferent. Aquests preus són una referència inicial i s’ajusten a les necessitats del teu negoci.</span></p>
     </div>
 
     <div class="pricing-grid" style="margin-top:3rem;">
@@ -947,7 +1080,7 @@
           <li><span class="chk">✓</span><span data-es="Diseño 100% a medida" data-ca="Disseny 100% a mida">Disseny 100% a mida</span></li>
           <li><span class="chk">✓</span><span data-es="Entrega en menos de 15 días" data-ca="Entrega en menys de 15 dies">Entrega en menys de 15 dies</span></li>
           <li><span class="chk">✓</span><span data-es="Formación incluida" data-ca="Formació inclosa">Formació inclosa</span></li>
-          <li><span class="chk">✓</span><span data-es="30 días de garantía" data-ca="30 dies de garantia">30 dies de garantia</span></li>
+          <li><span class="chk">✓</span><span data-es="30 días de acompañamiento" data-ca="30 dies d’acompanyament">30 dies d’acompanyament</span></li>
         </ul>
         <a href="#contacto" class="btn-primary" style="display:block;text-align:center;"><span data-es="Solicitar propuesta" data-ca="Sol·licitar proposta">Sol·licitar proposta</span></a>
       </div>
@@ -968,28 +1101,11 @@
   </div>
 </section>
 
-<!-- ─── KIT DIGITAL ─── -->
-<section class="kit-section" id="kit-digital">
-  <div class="kit-inner reveal">
-    <div class="kit-badge">
-      <div class="big"><span data-es="hasta" data-ca="fins a">fins a</span></div>
-      <div class="big" style="font-size:1.45rem">12.000€</div>
-      <div class="small"><span data-es="subvención" data-ca="subvenció">subvenció</span></div>
-    </div>
-    <div class="kit-text">
-      <h2><span data-es="Fináncialo con el Kit Digital" data-ca="Finança'l amb el Kit Digital">Finança'l amb el Kit Digital</span></h2>
-      <p>Si tu empresa tiene entre <span class="highlight"><span data-es="1 y 49 empleados" data-ca="1 i 49 empleats">1 i 49 empleats</span></span>, <span data-es="puedes acceder a subvenciones del Programa Kit Digital para digitalizar tu negocio con IA." data-ca="pots accedir a subvencions del Programa Kit Digital per digitalitzar el teu negoci amb IA.">pots accedir a subvencions del Programa Kit Digital per digitalitzar el teu negoci amb IA.</span> <span class="highlight"><span data-es="Hasta 12.000€ de ayuda europea" data-ca="Fins a 12.000€ d'ajuda europea">Fins a 12.000€ d'ajuda europea</span></span> <span data-es="que pueden cubrir el coste total de la implementación." data-ca="que poden cobrir el cost total de la implementació.">que poden cobrir el cost total de la implementació.</span><br><br><span data-es="Te acompañamos en todo el proceso de solicitud, sin coste adicional. La IA en tu empresa puede salirte" data-ca="T'acompanyem en tot el procés de sol·licitud, sense cost addicional. La IA a la teva empresa et pot sortir">T'acompanyem en tot el procés de sol·licitud, sense cost addicional. La IA a la teva empresa et pot sortir</span> <span class="highlight"><span data-es="gratis" data-ca="gratis">gratis</span></span>.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ─── TERRITORIO ─── -->
 <div class="territory-strip reveal">
   <p>📍 <span data-es="Con sede en el" data-ca="Amb seu al">Amb seu al</span> <strong>Montseny, Barcelona</strong></p>
   <p>•</p>
-  <p>🇪🇸 <span data-es="Servicios en toda" data-ca="Serveis a tota">Serveis a tota</span> <strong>España</strong></p>
-  <p>•</p>
-  <p>🏆 <strong><span data-es="Primera empresa especializada en IA" data-ca="Primera empresa especialitzada en IA">Primera empresa especialitzada en IA</span></strong> <span data-es="de la comarca del Montseny" data-ca="de la comarca del Montseny">de la comarca del Montseny</span></p>
+  <p>🇪🇸 <span data-es="Servicios en toda" data-ca="Serveis a tota">Serveis a tota</span> <strong><span data-es="España" data-ca="Espanya">Espanya</span></strong></p>
 </div>
 
 
@@ -1006,15 +1122,15 @@
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;" class="reveal">
       <div>
         <p style="color:var(--text-muted);font-size:.95rem;line-height:1.75;">
-          <span data-es="Cada vez más pymes españolas están adoptando soluciones de inteligencia artificial para automatizar sus procesos, mejorar la atención al cliente y aumentar sus ventas. La digitalización con IA ya no requiere grandes inversiones ni equipos técnicos — con las herramientas adecuadas, cualquier negocio puede beneficiarse." 
-                data-ca="Cada vegada més pimes espanyoles estan adoptant solucions d'intel·ligència artificial per automatitzar els seus processos, millorar l'atenció al client i augmentar les seves vendes. La digitalització amb IA ja no requereix grans inversions ni equips tècnics — amb les eines adequades, qualsevol negoci pot beneficiar-se.">
-            Cada vegada més pimes espanyoles estan adoptant solucions d'intel·ligència artificial per automatitzar els seus processos, millorar l'atenció al client i augmentar les seves vendes. La digitalització amb IA ja no requereix grans inversions ni equips tècnics — amb les eines adequades, qualsevol negoci pot beneficiar-se.
+          <span data-es="Cada vez más pymes españolas están adoptando soluciones de inteligencia artificial para automatizar sus procesos y mejorar la atención al cliente. Con las herramientas adecuadas, los negocios locales también pueden aprovechar estas tecnologías."
+                data-ca="Cada vegada més pimes catalanes adopten solucions d’intel·ligència artificial per automatitzar processos i millorar l’atenció al client. Amb les eines adequades, els negocis locals també poden aprofitar aquestes tecnologies.">
+            Cada vegada més pimes catalanes adopten solucions d’intel·ligència artificial per automatitzar processos i millorar l’atenció al client. Amb les eines adequades, els negocis locals també poden aprofitar aquestes tecnologies.
           </span>
         </p>
         <p style="color:var(--text-muted);font-size:.95rem;line-height:1.75;margin-top:1rem;">
-          <span data-es="En SanaConsultIA diseñamos bots inteligentes, agentes de IA para WhatsApp, sistemas de automatización de procesos y soluciones de atención al cliente automatizada para pymes de todos los sectores. Todo completamente personalizado y al mejor precio del mercado nacional." 
-                data-ca="A SanaConsultIA dissenyem bots intel·ligents, agents d'IA per a WhatsApp, sistemes d'automatització de processos i solucions d'atenció al client automatitzada per a pimes de tots els sectors. Tot completament personalitzat i al millor preu del mercat nacional.">
-            A SanaConsultIA dissenyem bots intel·ligents, agents d'IA per a WhatsApp, sistemes d'automatització de processos i solucions d'atenció al client automatitzada per a pimes de tots els sectors. Tot completament personalitzat i al millor preu del mercat nacional.
+          <span data-es="En SanaConsultIA diseñamos chatbots, agentes de IA para WhatsApp y automatizaciones de procesos para negocios locales. Cada propuesta parte de las necesidades concretas del negocio."
+                data-ca="A SanaConsultIA dissenyem chatbots, agents d’IA per a WhatsApp i automatitzacions de processos per a negocis locals. Cada proposta parteix de les necessitats concretes del negoci.">
+            A SanaConsultIA dissenyem chatbots, agents d’IA per a WhatsApp i automatitzacions de processos per a negocis locals. Cada proposta parteix de les necessitats concretes del negoci.
           </span>
         </p>
       </div>
@@ -1097,7 +1213,7 @@
   <div class="footer-inner">
     <div>
       <div class="footer-logo">SanaConsult<span>IA</span></div>
-      <p class="footer-tagline"><span data-es="Primera empresa de IA del Montseny." data-ca="Primera empresa d'IA del Montseny.">Primera empresa d'IA del Montseny.</span><br><span data-es="Automatización a medida para pymes de toda España." data-ca="Automatització a mida per a pimes de tota Espanya.">Automatització a mida per a pimes de tota Espanya.</span></p>
+      <p class="footer-tagline"><span data-es="IA y automatización para negocios locales." data-ca="IA i automatització per a negocis locals.">IA i automatització per a negocis locals.</span></p>
     </div>
     <div class="footer-contact">
       <h4><span data-es="Contacto" data-ca="Contacte">Contacte</span></h4>
@@ -1111,11 +1227,17 @@
       <a href="#servicios"><span data-es="Agente IA en WhatsApp" data-ca="Agent IA al WhatsApp">Agent IA al WhatsApp</span></a>
       <a href="#servicios"><span data-es="Automatización de procesos" data-ca="Automatització de processos">Automatització de processos</span></a>
       <a href="#servicios"><span data-es="Consultoría IA" data-ca="Consultoria IA">Consultoria IA</span></a>
+      <a href="#redes-sociales"><span data-es="Gestión de redes sociales" data-ca="Gestió de xarxes socials">Gestió de xarxes socials</span></a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 SanaConsult<span class="green">IA</span> · Jordi Sanahuja · Barcelona</p>
-    <p><span data-es="Primera empresa especializada en IA del" data-ca="Primera empresa especialitzada en IA del">Primera empresa especialitzada en IA del</span> <span class="green">Montseny</span></p>
+    <p>© 2026 SanaConsult<span class="green">IA</span> · Jordi Sanahuja · Barcelona</p>
+    <p class="footer-legal-links">
+      <a href="aviso-legal.html"><span data-es="Aviso legal" data-ca="Avís legal">Avís legal</span></a>
+      <a href="politica-privacidad.html"><span data-es="Política de privacidad" data-ca="Política de privacitat">Política de privacitat</span></a>
+      <a href="politica-cookies.html"><span data-es="Política de cookies" data-ca="Política de cookies">Política de cookies</span></a>
+      <button type="button" data-cookie-settings><span data-es="Configurar cookies" data-ca="Configurar cookies">Configurar cookies</span></button>
+    </p>
   </div>
 </footer>
 
@@ -1194,16 +1316,6 @@
 </script>
 
 <script>
-  function showSector(id) {
-    document.querySelectorAll('.sector-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.sector-detail').forEach(d => d.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-    document.getElementById('sector-' + id).classList.add('active');
-  }
-</script>
-
-
-<script>
   function setLang(lang) {
     // track current language and update html lang attribute
     window.currentLang = lang;
@@ -1233,6 +1345,20 @@
     document.querySelectorAll('option[data-ca]').forEach(el => {
       el.textContent = lang === 'ca' ? el.getAttribute('data-ca') : el.getAttribute('data-es');
     });
+    const meta = {
+      es: {
+        title: 'SanaConsultIA | Automatizo la atención al cliente y las redes de tu negocio local',
+        description: 'Soy Jordi. Ayudo a negocios locales a captar y atender clientes con IA, y a tener un Instagram constante.',
+      },
+      ca: {
+        title: 'SanaConsultIA | Automatitzo l’atenció al client i les xarxes del teu negoci local',
+        description: 'Soc en Jordi. Ajudo els negocis locals a captar i atendre clients amb IA i a mantenir Instagram actiu.',
+      },
+    }[lang];
+    document.title = meta.title;
+    document.querySelector('meta[name="description"]').content = meta.description;
+    document.querySelector('meta[property="og:title"]').content = meta.title;
+    document.querySelector('meta[property="og:description"]').content = meta.description;
   }
   document.addEventListener('DOMContentLoaded', () => setLang('ca'));
 </script>
@@ -1263,5 +1389,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654 a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<script defer src="js/hero-network.bundle.js"></script>
+<script src="js/cookie-consent.js"></script>
 </body>
 </html>

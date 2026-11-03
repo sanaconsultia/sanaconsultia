@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/cookie-consent.css">
 <style>
   :root {
     --navy: #0F1C2E; --navy-mid: #1A2D45; --green: #1D9E75; --green-hover: #15865f;
@@ -95,6 +96,7 @@
   .btn-primary:hover { background: var(--green-hover); transform: translateY(-2px); }
 
   footer { background: var(--footer-bg); padding: 3.5rem 5% 2.5rem; border-top: 1px solid rgba(29,158,117,.2); }
+  footer .footer-bottom a, footer .footer-bottom button { color: rgba(255,255,255,.7); background: transparent; border: 0; font: inherit; font-size: .8rem; text-decoration: underline; cursor: pointer; }
   .footer-inner { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
   .footer-logo { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; }
   .footer-logo span { color: var(--green); }
@@ -201,7 +203,7 @@
   <div class="footer-inner">
     <div>
       <div class="footer-logo">SanaConsult<span>IA</span></div>
-      <p class="footer-tagline"><span data-es="Primera empresa de IA del Montseny." data-ca="Primera empresa d'IA del Montseny.">Primera empresa d'IA del Montseny.</span><br><span data-es="Automatización a medida para pymes de toda España." data-ca="Automatització a mida per a pimes de tota Espanya.">Automatització a mida per a pimes de tota Espanya.</span></p>
+      <p class="footer-tagline"><span data-es="IA y automatización para negocios locales." data-ca="IA i automatització per a negocis locals.">IA i automatització per a negocis locals.</span></p>
     </div>
     <div class="footer-contact">
       <h4><span data-es="Contacto" data-ca="Contacte">Contacte</span></h4>
@@ -217,8 +219,13 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 SanaConsult<span class="green">IA</span> · Jordi Sanahuja · Barcelona</p>
-    <p><span data-es="Primera empresa especializada en IA del" data-ca="Primera empresa especialitzada en IA del">Primera empresa especialitzada en IA del</span> <span class="green">Montseny</span></p>
+    <p>© 2026 SanaConsult<span class="green">IA</span> · Jordi Sanahuja · Barcelona</p>
+    <p>
+      <a href="aviso-legal.html"><span data-es="Aviso legal" data-ca="Avís legal">Avís legal</span></a> ·
+      <a href="politica-privacidad.html"><span data-es="Política de privacidad" data-ca="Política de privacitat">Política de privacitat</span></a> ·
+      <a href="politica-cookies.html"><span data-es="Política de cookies" data-ca="Política de cookies">Política de cookies</span></a> ·
+      <button type="button" data-cookie-settings><span data-es="Configurar cookies" data-ca="Configurar cookies">Configurar cookies</span></button>
+    </p>
   </div>
 </footer>
 
@@ -247,5 +254,6 @@
     if (saved) setLang(saved);
   })();
 </script>
+<script src="js/cookie-consent.js"></script>
 </body>
 </html>
