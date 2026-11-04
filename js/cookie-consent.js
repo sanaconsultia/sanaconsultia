@@ -30,7 +30,7 @@ const COOKIE_TEXT = {
   ca: {
     title: 'La teva privacitat ens importa',
     intro: 'Fem servir emmagatzematge necessari per recordar les teves preferències. Si ens dones permís, també podem mesurar l’ús del web o mostrar publicitat personalitzada. Pots acceptar, rebutjar o configurar les categories opcionals.',
-    link: 'Política de cookies',
+    link: 'Política de galetes',
     legalLink: 'Avís legal',
     privacyLink: 'Política de privacitat',
     necessary: 'Necessàries',
@@ -42,7 +42,7 @@ const COOKIE_TEXT = {
     accept: 'Acceptar',
     reject: 'Rebutjar',
     configure: 'Configurar',
-    manage: 'Configurar cookies',
+    manage: 'Configurar les galetes',
     save: 'Desar les preferències',
     back: 'Tornar',
   },
